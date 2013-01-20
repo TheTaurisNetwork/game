@@ -1,0 +1,220 @@
+//-------------------------- 1/20/2013 -- 14:05:39 -----
+Processor Init:
+   Intel Pentium III Xeon, ~3.11 Ghz
+   FPU detected
+   MMX detected
+   SSE detected
+   SSE2 detected
+   MP detected [4 cores, 4 logical, 1 physical]
+ 
+Math Init:
+   Installing Standard C extensions
+   Installing Assembly extensions
+   Installing FPU extensions
+   Installing MMX extensions
+   Installing SSE extensions
+ 
+Initializing platform...
+Input Init:
+   keyboard0 input device created.
+   mouse0 input device created.
+   DirectInput enabled.
+
+Done
+GFX Init:
+   Direct 3D (version 9.x) device found
+   Null device found
+
+DebugDrawer Enabled!
+--------- Loading DIRS ---------
+ % - Initializing Core
+Binding server port to default IP
+UDP initialized on port 0
+Attempting to create GFX device: Intel(R) HD Graphics (D3D9)
+Device created, setting adapter and enumerating modes
+   Cur. D3DDevice ref count=1
+   Pix version detected: 3.000000
+   Vert version detected: 3.000000
+   Maximum number of simultaneous samplers: 16
+   Number of simultaneous render targets: 4
+   Hardware occlusion query detected: Yes
+   Using Direct3D9Ex: No
+WMIVideoInfo: DxDiag initialized
+Initializing GFXCardProfiler (D3D9)
+   o Chipset : 'INTEL'
+   o Card    : 'Intel(R) HD Graphics'
+   o Version : '8.15.0010.2752'
+   - Scanning card capabilities...
+GFXCardProfiler (D3D9) - Setting capability 'autoMipMapLevel' to 1.
+GFXCardProfiler (D3D9) - Setting capability 'maxTextureWidth' to 8192.
+GFXCardProfiler (D3D9) - Setting capability 'maxTextureHeight' to 8192.
+GFXCardProfiler (D3D9) - Setting capability 'maxTextureSize' to 8192.
+GFXCardProfiler (D3D9) - Setting capability 'lerpDetailBlend' to 1.
+GFXCardProfiler (D3D9) - Setting capability 'fourStageDetailBlend' to 1.
+   - Loading card profiles...
+      - Loaded card profile core/profile/D3D9.cs
+      - No card profile core/profile/D3D9.INTEL.cs exists
+      - No card profile core/profile/D3D9.INTEL.IntelRHDGraphics.cs exists
+      - No card profile core/profile/D3D9.INTEL.IntelRHDGraphics.81500102752.cs exists
+Warning, overwriting material for: corridor0
+% - PostFX Manager - Executing core/scripts/client/postFx/default.postfxpreset.cs
+% - PostFX Manager - Applying from preset
+% - PostFX Manager - PostFX enabled
+sfxStartup...
+SFXSystem::createDevice - created OpenAL device 'Generic Software'
+   Provider: OpenAL
+   Device: Generic Software
+   Hardware: No
+   Buffers: 8
+
+--------- Initializing Taruis: Server Scripts ---------
+
+--------- Initializing Tauris: Client Scripts ---------
+
+--------- Initializing Lighting Systems ---------
+Using Advanced Lighting
+
+--------------
+Attempting to set resolution to "1024 768 false 32 60 4"
+Accepted Mode: 
+--Resolution : 1024 768
+--Full Screen : No
+--Bits Per Pixel : 32
+--Refresh Rate : 60
+--FSAA Level : 4
+--------------
+GFXPCD3D9Device::reset - depthstencil 1e16760 has 2 ref's
+--- Resetting D3D Device ---
+GFXPCD3D9Device::reset - depthstencil 47f04c0 has 2 ref's
+--- Resetting D3D Device ---
+Improperly specified bind for key: weaponSlot
+Improperly specified bind for key: weaponSlot
+Improperly specified bind for key: weaponSlot
+Improperly specified bind for key: weaponSlot
+Improperly specified bind for key: weaponSlot
+Improperly specified bind for key: weaponSlot
+Improperly specified bind for key: weaponSlot
+Binding server port to default IP
+UDP initialized on port 0
+Core Initialized - %
+ % - Initializing Tools
+ % - Initializing Tools Base
+ % - Initializing Base Editor
+ % - Initializing World Editor
+ % - Initializing Sketch Tool
+ - Initializing Datablock Editor
+ % - Initializing Debugger
+ % - Initializing Decal Editor
+ % - Initializing Gui Editor
+ % - Initializing Material Editor
+ % - Initializing Mission Area Editor
+ % - Initializing Particle Editor
+ % - Initializing Physics Tools
+No physics plugin exists.
+ % - Initializing Shape Editor
+
+Engine initialized...
+Window focus status changed: focus: 1
+AntiAliasing has been disabled; it is not compatible with AdvancedLighting.
+core/scripts/server/server.cs (139): Unable to find function endMission
+Exporting server prefs...
+ShapeBaseImageData:: Could not resolve state "NoAmmo" for image "textureGunImage"
+ParticleData(LightPuff) times[2] < times[1]
+Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
+Error: cannot change namespace parent linkage of Console from StaticShapeData to Console.
+Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
+*** LOADING MISSION: core/levels/Empty Room.mis
+*** Stage 1 load
+*** Stage 2 load
+*** Mission loaded
+Connect request from: 
+Connection established 3937
+CADD: 3938 local
+*** Sending mission load to client: core/levels/Empty Room.mis
+Mapping string: ServerMessage to index: 0
+Mapping string: MsgConnectionError to index: 1
+Mapping string: MsgLoadInfo to index: 2
+Mapping string: MsgLoadDescripition to index: 3
+Mapping string: MsgLoadInfoDone to index: 4
+Mapping string: MsgClientJoin to index: 5
+Mapping string: Welcome to Tauris, %1. to index: 6
+Mapping string: newBlood to index: 7
+Mapping string: MissionStartPhase1 to index: 8
+*** New Mission: core/levels/Empty Room.mis
+*** Phase 1: Download Datablocks & Targets
+% - PostFX Manager - Executing core/scripts/client/postFx/default.postfxpreset.cs
+% - PostFX Manager - Applying from preset
+% - PostFX Manager - PostFX enabled
+Mapping string: MissionStartPhase1Ack to index: 0
+[MaterialList::mapMaterials] Unable to find material for texture: base.lmale
+Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
+Mapping string: receiveItemList to index: 9
+Mapping string: receiveInvFav to index: 1
+core/scripts/server/commands.cs (334): Unable to find object: '' attempting to call function 'validateLoadout'
+core/scripts/server/commands.cs (334): Unable to find object: '' attempting to call function 'validateLoadout'
+core/scripts/server/commands.cs (334): Unable to find object: '' attempting to call function 'validateLoadout'
+core/scripts/server/commands.cs (334): Unable to find object: '' attempting to call function 'validateLoadout'
+core/scripts/server/commands.cs (334): Unable to find object: '' attempting to call function 'validateLoadout'
+core/scripts/server/commands.cs (334): Unable to find object: '' attempting to call function 'validateLoadout'
+Mapping string: MissionStartPhaseDEPS to index: 10
+*** Phase DEPS: Downloading Deployables
+Mapping string: MissionStartPhaseDEPSAck to index: 2
+Mapping string: receiveDep to index: 11
+Mapping string: MissionStartPhase2 to index: 12
+*** Phase 2: Download Ghost Objects
+Mapping string: MissionStartPhase2Ack to index: 3
+SkyBox::_updateMaterial, failed to find Material of name BlackSkyMat!
+[Material::mapMaterial] - Cannot map unnamed Material
+[Material::mapMaterial] - Cannot map unnamed Material
+SkyBox::_updateMaterial, failed to find Material of name BlackSkyMat!
+Ghost Always objects received.
+Mapping string: MissionStartPhase3 to index: 13
+Client Replication Startup has Happened!
+fxFoliageReplicator - replicated client foliage for 0 objects
+*** Phase 3: Mission Lighting
+Mission lighting done
+Mapping string: MissionStartPhase3Ack to index: 4
+Mapping string: MissionStart to index: 14
+*** Initial Control Object
+Activating DirectInput...
+*** Control Object Changed
+Mapping string: guiDatastream to index: 15
+getDatastream 0 FAVOURITE 1^Light^Pulse Rifle^Handgun^Ammo Pack^Flashbang
+getDatastream 1 FAVOURITE 2^Light^Pulse Rifle^Handgun^Ammo Pack^Flashbang
+getDatastream 2 FAVOURITE 3^Light^Pulse Rifle^Handgun^Ammo Pack^M9 Frag Grenade
+getDatastream 3 FAVOURITE 4^Marine^Pulse Rifle^C4 Detonator^C4 Charges^Flashbang
+getDatastream 2 FAVOURITE 3^Light^Pulse Rifle^Handgun^Ammo Pack^M9 Frag Grenade
+getDatastream 3 FAVOURITE 4^Marine^Pulse Rifle^C4 Detonator^C4 Charges^Flashbang
+getDatastream 4 FAVOURITE 5^Marine^Shotgun^Handgun^Ammo Pack^M9 Frag Grenade
+getDatastream 5 FAVOURITE 6^Armoured^Pulse Rifle^Handgun^Ammo Pack^M9 Frag Grenade
+getDatastream 1 FAVOURITE 2^Light^Pulse Rifle^Handgun^Ammo Pack^Flashbang
+getDatastream 0 FAVOURITE 1^Light^Pulse Rifle^Handgun^Ammo Pack^Flashbang
+getDatastream 1 FAVOURITE 2^Light^Pulse Rifle^Handgun^Ammo Pack^Flashbang
+getDatastream 2 FAVOURITE 3^Light^Pulse Rifle^Handgun^Ammo Pack^M9 Frag Grenade
+getDatastream 5 FAVOURITE 6^Armoured^Pulse Rifle^Handgun^Ammo Pack^M9 Frag Grenade
+getDatastream 0 FAVOURITE 1^Light^Pulse Rifle^Handgun^Ammo Pack^Flashbang
+getDatastream 1 FAVOURITE 2^Light^Pulse Rifle^Medi Nanite^Medical Pack^M9 Frag Grenade
+getDatastream 2 FAVOURITE 3^Light^Pulse Rifle^Nanite Applicator^Nanite Distro^M2 EMP Grenade
+*** ENDING MISSION
+CDROP: 3938 
+Exporting server prefs...
+Exporting client prefs
+Exporting server prefs
+Cur. D3DDevice ref count=1

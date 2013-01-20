@@ -1,0 +1,9 @@
+$ServerPref::AdminPassword = "";
+$ServerPref::BanTime = 1800;
+$ServerPref::ConnectionError = "You do not have the correct version of the Tauris or the related art needed to play on this server, please contact the server operator for more information.";
+$ServerPref::FloodProtectionEnabled = 1;
+$ServerPref::KickBanTime = 300;
+$ServerPref::MaxChatLen = 120;
+$ServerPref::MaxPlayers = 64;
+$ServerPref::Port = 28000;
+$ServerPref::TimeLimit = 20;
