@@ -177,6 +177,8 @@ function Drive::jumpSequence(%data, %this, %gameObject)
        if (%obj !$= "GroundPlane")
        {
          %obj.setPosition( VectorAdd(%obj.getPosition(), %offset) );
+         if (%obj.getDatablock())
+           %obj.getDatablock().onHyperjump(%obj);
        }
      }
 
@@ -215,13 +217,9 @@ function Drive::jumpSequence(%data, %this, %gameObject)
 //        StaticShape
 //-----------------------------------------------------------------------------
 
-function SimObject::arrangeToCenter(%this, %old, %new)
+function StaticShapeData::onHyperjump(%this, %obj)
 {
-//  warn(%new);
-  %offset = vectorSub(%old, %this.getPosition());
-//  warn(%offset);
-//  warn(vectorAdd(%offset, %new));
-  %this.setPosition( vectorAdd(%offset, %new) );
+
 }
 
 

@@ -211,6 +211,86 @@ function assetGroup::getBranchState(%this, %branch)
   return %this.branch[%branch];
 }
 
+//=============================================================================
+
+function assetGroup::enableLights(%this)
+{
+  for (%i = 0; %i < %this.getCount(); %i++)
+  {
+    %obj = %this.getObject(%i);
+    if (%obj.className() $= "Lights")
+      %obj.setPwrBranch( %obj.pwrBranch );
+  }
+}
+
+//-----------------------------------------------------------------------------
+
+function assetGroup::disableLights(%this)
+{
+  for (%i = 0; %i < %this.getCount(); %i++)
+  {
+    %obj = %this.getObject(%i);
+    if (%obj.className() $= "Lights")
+      %obj.setPowerState( 0 );
+  }
+}
+
+//-----------------------------------------------------------------------------
+
+function assetGroup::setLightingBranch(%this, %b)
+{
+  for (%i = 0; %i < %this.getCount(); %i++)
+  {
+    %obj = %this.getObject(%i);
+    if (%obj.className() $= "Lights")
+      %obj.setPwrBranch( %b );
+  }
+}
+
+//=============================================================================
+
+function assetGroup::setGravityBranch(%this, %b)
+{
+  %this.gravityBranch = %b;
+  %this.getGroup().getShipObject().gravityMode(1);
+}
+
+//=============================================================================
+
+function assetGroup::setElevatorBranch(%this, %b)
+{
+  for (%i = 0; %i < %this.getCount(); %i++)
+  {
+    %obj = %this.getObject(%i);
+    if (%obj.className() $= "Elevator")
+      %obj.setPwrBranch(%b);
+  }
+}
+
+//-----------------------------------------------------------------------------
+
+function assetGroup::enableElevators(%this)
+{
+  for (%i = 0; %i < %this.getCount(); %i++)
+  {
+    %obj = %this.getObject(%i);
+    if (%obj.className() $= "Elevator")
+      %obj.setPwrBranch( %obj.pwrBranch );
+  }
+}
+
+//-----------------------------------------------------------------------------
+
+function assetGroup::disableElevators(%this)
+{
+  for (%i = 0; %i < %this.getCount(); %i++)
+  {
+    %obj = %this.getObject(%i);
+    if (%obj.className() $= "Elevator")
+      %obj.setPowerState( 0 );
+  }
+}
+
 //-----------------------------------------------------------------------------
 //  Generator Functions
 //-----------------------------------------------------------------------------

@@ -12,9 +12,11 @@ exec("./camera.cs");
 exec("./markers.cs");
 
 exec("./defaultparticle.cs");
+exec("./particles.cs");
 
 // LightFlareData and LightAnimData(s)
 exec("./lights.cs");
+exec("./triggers.cs");
 
 exec("./tools.cs");
 exec("./player.cs");

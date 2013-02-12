@@ -88,7 +88,20 @@ datablock staticShapeData(HyperDriveMkIII : HyperDriveMkI)
 };
 
 //-----------------------------------------------------------------------------
+//     Lights
+//-----------------------------------------------------------------------------
 
+datablock staticShapeData(Lights)
+{
+   category = "Assets";
+   className = Lights;
+   shapeFile = "core/art/shapes/cube.dae";
+
+   typeMask = $TypeMasks::StaticShapeObjectType;
+
+   needsPower = true;
+   pwrRequired = 2;
+};
 
 //-----------------------------------------------------------------------------
 //     Asset
@@ -107,5 +120,38 @@ datablock staticShapeData(InventoryStation)
 };
 
 //-----------------------------------------------------------------------------
+
+datablock staticShapeData(upElevator)
+{
+   category = "Assets";
+   className = Elevator;
+   shapeFile = "core/art/shapes/cube.dae";
+
+   typeMask = $TypeMasks::StaticShapeObjectType;
+
+   needsPower = true;
+   pwrRequired = 3;
+   mode = 1;
+
+};
+
+//-----------------------------------------------------------------------------
+
+datablock staticShapeData(downElevator)
+{
+   category = "Assets";
+   className = Elevator;
+   shapeFile = "core/art/shapes/cube.dae";
+
+   typeMask = $TypeMasks::StaticShapeObjectType;
+
+   needsPower = true;
+   pwrRequired = 3;
+   mode = 0;
+   
+};
+
+//-----------------------------------------------------------------------------
+
 
 

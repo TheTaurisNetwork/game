@@ -62,6 +62,8 @@ function ShipGroup::CreateShipObject(%this)
   {
       class = "shipObject";
       internalName = "shipObject";
+      elevatorMode = true;
+      gravityMode = true;
   };
   %this.add( %group );
 }
@@ -69,6 +71,28 @@ function ShipGroup::CreateShipObject(%this)
 function ShipGroup::getShipObject(%this)
 {
   %i = %this-->shipObject;
+  if (isObject(%i))
+    return %i;
+  else
+    return false;
+}
+
+//-----------------------------------------------------------------------------
+
+function ShipGroup::CreateTempGroup(%this)
+{
+  %group = new simGroup()
+  {
+      class = "tempGroup";
+      internalName = "tempGroup";
+  };
+  %this.add( %group );
+  return %group;
+}
+
+function ShipGroup::getTempGroup(%this)
+{
+  %i = %this-->tempGroup;
   if (isObject(%i))
     return %i;
   else

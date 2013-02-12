@@ -513,6 +513,19 @@ function showSpawner(%val)
 
 //------------------------------------------------------------------------------
 
+function showShipData(%val)
+{
+  if (%val)
+  {
+    if (shipDataDlg.awake)
+      canvas.popDialog(shipDataDlg);
+    else
+      canvas.pushDialog(shipDataDlg);
+  }
+}
+
+//------------------------------------------------------------------------------
+
 function showinventory(%val)
 {
   if (%val)
@@ -564,15 +577,35 @@ function selectFavorite6(%val)
 
 //------------------------------------------------------------------------------
 
+function toggleFlashlight(%val)
+{
+  if (%val)
+  {
+    if (!$flashlight)
+    {
+      commandtoServer('toggleFlashlight');
+      $flashlight = true;
+    }
+    else
+    {
+      commandtoServer('toggleFlashlight');
+      $flashlight = false;
+    }
+  }
+}
+
+//------------------------------------------------------------------------------
+
 moveMap.bind(keyboard, "1", weaponSlot, 0);
 moveMap.bind(keyboard, "2", weaponSlot, 1);
-moveMap.bind(keyboard, "3", weaponSlot, 2);
-moveMap.bind(keyboard, "4", weaponSlot, 3);
-moveMap.bind(keyboard, "5", weaponSlot, 4);
+//moveMap.bind(keyboard, "3", weaponSlot, 2);
+//moveMap.bind(keyboard, "4", weaponSlot, 3);
+//moveMap.bind(keyboard, "5", weaponSlot, 4);
 
 moveMap.bind(keyboard, "q", mediPack);
 moveMap.bind(keyboard, "r", weaponSlot, "hp");
 moveMap.bind(keyboard, "g", weaponSlot, "nade");
+moveMap.bind(keyboard, "l", toggleFlashlight);
 
 //------------------------------------------------------------------------------
 
@@ -592,7 +625,7 @@ moveMap.bind(keyboard, "p", programObject);
 moveMap.bind(keyboard, "i", insObject);
 moveMap.bind(keyboard, "F2", showPowerGrid);
 moveMap.bind(keyboard, "F1", showSpawner);
-
+moveMap.bind(keyboard, "F5", showShipData);
 
 
 

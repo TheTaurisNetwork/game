@@ -188,11 +188,48 @@ function serverCmdrequestDataforGui(%client, %id, %dlg, %func, %var1)
 
             for (%i = 0; %i < %pGroup.branch[max]; %i++)
                %arg1 = Trim(%arg1 SPC %pGroup.getBranchState(%i));
-            %arg2 = %obj.getDatablock().pwrRequired;
+            %arg2 = %obj.pwrRequired;
             %arg3 = %obj.pwrBranch;
           }
 
+      case "shipDataDlg":
+          %ship = %client.getBuildingGroup();
+          if (%ship)
+          {
+            %obj = %client.player.interactObj;
+            %aGroup = %ship.getAssetGroup();
+            %pGroup = %ship.getPieceGroup();
+            
+            for (%i = 0; %i < %aGroup.branch[max]; %i++)
+               %arg1 = Trim(%arg1 SPC %aGroup.getBranchState(%i));
 
+            %arg2 = 0;
+            for (%i = 0; %i < %aGroup.getCount(); %i++)
+            {
+              %obj = %aGroup.getObject(%i);
+              if (%obj.className() $= "Lights")
+              {
+                %arg2+=%obj.pwrRequired;
+                %arg4 = %obj.pwrBranch;
+              }
+            }
+
+            %arg3 = 0;
+            for (%i = 0; %i < %pGroup.getCount(); %i++)
+              if (%pGroup.getObject(%i) != %pGroup-->exterior)
+                %arg3+=5;
+
+            for (%i = 0; %i < %aGroup.getCount(); %i++)
+            {
+              %obj = %aGroup.getObject(%i);
+              if (%obj.className() $= "Elevator")
+                %arg6 = %obj.pwrBranch;
+            }
+
+            %arg5 = %aGroup.gravityBranch;
+            %arg7 = 0;
+//            %arg7 = 50;
+          }
   }
 
   %client.sendGuiDatastream(%id, %arg1, %arg2, %arg3, %arg4, %arg5, %arg6, %arg7, %arg8);
@@ -304,6 +341,38 @@ function serverCmdreceiveUploadDataStream(%client, %id, %dlg, %arg1, %arg2, %arg
             %obj.setPwrBranch(%arg1);
           serverCmdrequestDataforGui(%client, %id, %dlg);
 
+      case "shipDataDlg":
+//          error(%arg1);
+//          error(%arg2);
+          %sObject = %client.getBuildingGroup().getShipObject();
+          if (%sObject)
+          {
+            if (%arg1 == 0)
+            {
+              switch(%arg2)
+              {
+                 case "0":  // Lights
+                     %sObject.interiorLighting(%sObject.lights ? 0 : 1);
+
+                 case "1":  // Gravity
+                     %sObject.gravityMode(%sObject.gravityMode ? 0 : 1);
+
+                 case "2":  // Elevator Gravity Field
+                     %sObject.elevatorMode(%sObject.elevatorMode ? 0 : 1);
+              }
+            }
+            else if (%arg1 == 1)
+            {
+              %aGroup = %client.getBuildingGroup().getAssetGroup();
+              if (%aGroup)
+              {
+                %aGroup.setLightingBranch(%arg2);
+                %aGroup.setGravityBranch(%arg3);
+                %aGroup.setElevatorBranch(%arg4);
+              }
+            }
+          }
+          serverCmdrequestDataforGui(%client, %id, %dlg);
 
 
   }
@@ -331,7 +400,12 @@ function serverCmdreceiveInvFav(%client, %index, %list)
 {
   %client.favLoadout[%index] = %list;
 
-  %client.player.validateLoadout(%index, %list);
+  validateLoadout(%client, %index, %list);
+}
+
+function serverCmdupdateInvFav(%client, %index, %list)
+{
+  serverCmdreceiveInvFav(%client, %index, %list);
 
   %client.sendGuiDatastream("InventoryDlg", %index, %list);
 }
@@ -348,6 +422,20 @@ function serverCmdselectLoadout(%client, %index)
 }
 
 //----------------------------------------------------------------------------
+// Flashlight
+//----------------------------------------------------------------------------
+
+function serverCmdtoggleFlashlight(%client)
+{
+ %player = %client.getControlObject();
+ if (%player.isPlayer())
+ {
+   %player.flashLight = %player.flashLight ? 0 : 1;
+   %player.flashLight( %player.flashLight );
+ }
+}
+
+//----------------------------------------------------------------------------
 // Debug commands
 //----------------------------------------------------------------------------
 
@@ -360,6 +448,7 @@ function serverCmdNetSimulateLag( %client, %msDelay, %packetLossPercent )
 //----------------------------------------------------------------------------
 // Camera commands
 //----------------------------------------------------------------------------
+
 function serverCmdTogglePathCamera(%client, %val)
 {
    if(%val)

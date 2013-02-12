@@ -71,6 +71,15 @@ function StaticShape::isGenerator(%this)
 }
 
 //-----------------------------------------------------------------------------
+
+function StaticShape::pwrRequired(%this)
+{
+  if (%this.getDatablock().needsPower)
+    return false;
+  return %this.getDatablock().pwrRequired;
+}
+
+//-----------------------------------------------------------------------------
 //     Helper Class
 //-----------------------------------------------------------------------------
 

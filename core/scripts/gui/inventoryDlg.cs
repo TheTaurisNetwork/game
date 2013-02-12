@@ -104,7 +104,7 @@ function InventoryDlg::save(%this)
 
   $pref::loadout[%f] = %name TAB %armour TAB %prim TAB %sec TAB %pack TAB %nade;
 
-  CommandtoServer('receiveInvFav', %f, $pref::loadout[%f]);
+  CommandtoServer('updateInvFav', %f, $pref::loadout[%f]);
 }
 
 //-----------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-//-------------------------- 1/20/2013 -- 14:05:39 -----
+//-------------------------- 1/29/2013 -- 22:19:31 -----
 Processor Init:
    Intel Pentium III Xeon, ~3.11 Ghz
    FPU detected
@@ -83,13 +83,10 @@ Accepted Mode:
 --Refresh Rate : 60
 --FSAA Level : 4
 --------------
-GFXPCD3D9Device::reset - depthstencil 1e16760 has 2 ref's
+GFXPCD3D9Device::reset - depthstencil 276760 has 2 ref's
 --- Resetting D3D Device ---
-GFXPCD3D9Device::reset - depthstencil 47f04c0 has 2 ref's
+GFXPCD3D9Device::reset - depthstencil 50904c0 has 2 ref's
 --- Resetting D3D Device ---
-Improperly specified bind for key: weaponSlot
-Improperly specified bind for key: weaponSlot
-Improperly specified bind for key: weaponSlot
 Improperly specified bind for key: weaponSlot
 Improperly specified bind for key: weaponSlot
 Improperly specified bind for key: weaponSlot
@@ -118,8 +115,14 @@ Window focus status changed: focus: 1
 AntiAliasing has been disabled; it is not compatible with AdvancedLighting.
 core/scripts/server/server.cs (139): Unable to find function endMission
 Exporting server prefs...
+core/scripts/server/commands.cs (354): string always evaluates to 0.
+core/scripts/server/commands.cs (354): string always evaluates to 0.
+core/scripts/server/TSNodes.cs (0): Unable to find object: 'MissionCleanup' attempting to call function 'add'
+ParticleEmitterData(ElevatorUpEmitter) velocityVariance > ejectionVelocity
+ParticleEmitterData(ElevatorDownEmitter) velocityVariance > ejectionVelocity
 ShapeBaseImageData:: Could not resolve state "NoAmmo" for image "textureGunImage"
 ParticleData(LightPuff) times[2] < times[1]
+core/art/datablocks/player.cs (0): Unable to find parent object LightMale for PlayerData.
 Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
 Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
 Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
@@ -130,14 +133,18 @@ Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds 
 Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
 Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
 Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
+Error: cannot change namespace parent linkage of lights from StaticShapeData to lights.
+Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
 Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
 *** LOADING MISSION: core/levels/Empty Room.mis
 *** Stage 1 load
 *** Stage 2 load
 *** Mission loaded
 Connect request from: 
-Connection established 3937
-CADD: 3938 local
+Connection established 3957
+CADD: 3958 local
 *** Sending mission load to client: core/levels/Empty Room.mis
 Mapping string: ServerMessage to index: 0
 Mapping string: MsgConnectionError to index: 1
@@ -165,14 +172,11 @@ Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds 
 Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
 Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
 Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
+Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
 Mapping string: receiveItemList to index: 9
 Mapping string: receiveInvFav to index: 1
-core/scripts/server/commands.cs (334): Unable to find object: '' attempting to call function 'validateLoadout'
-core/scripts/server/commands.cs (334): Unable to find object: '' attempting to call function 'validateLoadout'
-core/scripts/server/commands.cs (334): Unable to find object: '' attempting to call function 'validateLoadout'
-core/scripts/server/commands.cs (334): Unable to find object: '' attempting to call function 'validateLoadout'
-core/scripts/server/commands.cs (334): Unable to find object: '' attempting to call function 'validateLoadout'
-core/scripts/server/commands.cs (334): Unable to find object: '' attempting to call function 'validateLoadout'
 Mapping string: MissionStartPhaseDEPS to index: 10
 *** Phase DEPS: Downloading Deployables
 Mapping string: MissionStartPhaseDEPSAck to index: 2
@@ -191,29 +195,34 @@ fxFoliageReplicator - replicated client foliage for 0 objects
 *** Phase 3: Mission Lighting
 Mission lighting done
 Mapping string: MissionStartPhase3Ack to index: 4
+core/scripts/server/inventory.cs (276): Unable to find object: 'rifle' attempting to call function 'onInventory'
+core/scripts/server/inventory.cs (276): Unable to find object: 'pistol' attempting to call function 'onInventory'
+core/scripts/server/inventory.cs (276): Unable to find object: 'pistolammo' attempting to call function 'onInventory'
+core/scripts/server/inventory.cs (276): Unable to find object: 'nade' attempting to call function 'onInventory'
+core/scripts/server/inventory.cs (276): Unable to find object: 'ammopack' attempting to call function 'onInventory'
 Mapping string: MissionStart to index: 14
 *** Initial Control Object
 Activating DirectInput...
 *** Control Object Changed
-Mapping string: guiDatastream to index: 15
-getDatastream 0 FAVOURITE 1^Light^Pulse Rifle^Handgun^Ammo Pack^Flashbang
-getDatastream 1 FAVOURITE 2^Light^Pulse Rifle^Handgun^Ammo Pack^Flashbang
-getDatastream 2 FAVOURITE 3^Light^Pulse Rifle^Handgun^Ammo Pack^M9 Frag Grenade
-getDatastream 3 FAVOURITE 4^Marine^Pulse Rifle^C4 Detonator^C4 Charges^Flashbang
-getDatastream 2 FAVOURITE 3^Light^Pulse Rifle^Handgun^Ammo Pack^M9 Frag Grenade
-getDatastream 3 FAVOURITE 4^Marine^Pulse Rifle^C4 Detonator^C4 Charges^Flashbang
-getDatastream 4 FAVOURITE 5^Marine^Shotgun^Handgun^Ammo Pack^M9 Frag Grenade
-getDatastream 5 FAVOURITE 6^Armoured^Pulse Rifle^Handgun^Ammo Pack^M9 Frag Grenade
-getDatastream 1 FAVOURITE 2^Light^Pulse Rifle^Handgun^Ammo Pack^Flashbang
-getDatastream 0 FAVOURITE 1^Light^Pulse Rifle^Handgun^Ammo Pack^Flashbang
-getDatastream 1 FAVOURITE 2^Light^Pulse Rifle^Handgun^Ammo Pack^Flashbang
-getDatastream 2 FAVOURITE 3^Light^Pulse Rifle^Handgun^Ammo Pack^M9 Frag Grenade
-getDatastream 5 FAVOURITE 6^Armoured^Pulse Rifle^Handgun^Ammo Pack^M9 Frag Grenade
-getDatastream 0 FAVOURITE 1^Light^Pulse Rifle^Handgun^Ammo Pack^Flashbang
-getDatastream 1 FAVOURITE 2^Light^Pulse Rifle^Medi Nanite^Medical Pack^M9 Frag Grenade
-getDatastream 2 FAVOURITE 3^Light^Pulse Rifle^Nanite Applicator^Nanite Distro^M2 EMP Grenade
+==>loadAv();
+Object mesh "Plane" has no matching detail ("detail2" has been added automatically)
+Writing cached COLLADA shape to core/art/shapes/elevator_small0.cached.dts
+Ship avenger loaded.
+[MaterialList::mapMaterials] Unable to find material for texture: cor_roof
+[MaterialList::mapMaterials] Unable to find material for texture: cor_roof
+[MaterialList::mapMaterials] Unable to find material for texture: cor_roof
+[MaterialList::mapMaterials] Unable to find material for texture: cor_roof
+[MaterialList::mapMaterials] Unable to find material for texture: cor_roof
+[MaterialList::mapMaterials] Unable to find material for texture: cor_roof
+Mapping string: dropCameraAtPlayer to index: 5
+*** Control Object Changed
+Window focus status changed: focus: 0
+  Using background sleep time: 200
+DirectInput deactivated.
+Activating DirectInput...
+DirectInput deactivated.
 *** ENDING MISSION
-CDROP: 3938 
+CDROP: 3958 
 Exporting server prefs...
 Exporting client prefs
 Exporting server prefs

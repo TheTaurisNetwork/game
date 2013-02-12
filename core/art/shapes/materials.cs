@@ -1,7 +1,7 @@
 
-singleton Material(room_small0_cor_roof)
+singleton Material(elevator_small0_wall0_material)
 {
-   mapTo = "cor_roof";
+   mapTo = "wall0-material";
    diffuseColor[0] = "0.64 0.64 0.64 1";
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";
@@ -9,9 +9,9 @@ singleton Material(room_small0_cor_roof)
    translucentBlendOp = "None";
 };
 
-singleton Material(corridor_small0_cor_roof)
+singleton Material(elevator_small0_doorframe0_material)
 {
-   mapTo = "cor_roof";
+   mapTo = "doorframe0-material";
    diffuseColor[0] = "0.64 0.64 0.64 1";
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";
@@ -19,29 +19,9 @@ singleton Material(corridor_small0_cor_roof)
    translucentBlendOp = "None";
 };
 
-singleton Material(ship0_column1)
+singleton Material(elevator_small0_corridor0_material)
 {
-   mapTo = "column1";
-   diffuseColor[0] = "0.512 0.512 0.512 1";
-   specular[0] = "0.25 0.25 0.25 1";
-   specularPower[0] = "50";
-   doubleSided = "1";
-   translucentBlendOp = "None";
-};
-
-singleton Material(ship0_cor_roof)
-{
-   mapTo = "cor_roof";
-   diffuseColor[0] = "0.512 0.512 0.512 1";
-   specular[0] = "0.25 0.25 0.25 1";
-   specularPower[0] = "50";
-   doubleSided = "1";
-   translucentBlendOp = "None";
-};
-
-singleton Material(ship0_floortile2)
-{
-   mapTo = "floortile2";
+   mapTo = "corridor0-material";
    diffuseColor[0] = "0.64 0.64 0.64 1";
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";
@@ -49,9 +29,9 @@ singleton Material(ship0_floortile2)
    translucentBlendOp = "None";
 };
 
-singleton Material(ramp_small0_cor_roof)
+singleton Material(elevator_small0_floortile1_material)
 {
-   mapTo = "cor_roof";
+   mapTo = "floortile1-material";
    diffuseColor[0] = "0.64 0.64 0.64 1";
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";
@@ -59,9 +39,9 @@ singleton Material(ramp_small0_cor_roof)
    translucentBlendOp = "None";
 };
 
-singleton Material(ramp_small0_wall3)
+singleton Material(elevator_small0_rooftile1_material)
 {
-   mapTo = "wall3";
+   mapTo = "rooftile1-material";
    diffuseColor[0] = "0.64 0.64 0.64 1";
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";
@@ -69,9 +49,9 @@ singleton Material(ramp_small0_wall3)
    translucentBlendOp = "None";
 };
 
-singleton Material(ramp_small0_cor_roof)
+singleton Material(elevator_small0_wall3_material)
 {
-   mapTo = "cor_roof";
+   mapTo = "wall3-material";
    diffuseColor[0] = "0.64 0.64 0.64 1";
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";
@@ -79,9 +59,9 @@ singleton Material(ramp_small0_cor_roof)
    translucentBlendOp = "None";
 };
 
-singleton Material(corridor_small1_processDeco1)
+singleton Material(elevator_small0_metalBase0_material)
 {
-   mapTo = "processDeco1";
+   mapTo = "metalBase0-material";
    diffuseColor[0] = "0.64 0.64 0.64 1";
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";
@@ -89,9 +69,9 @@ singleton Material(corridor_small1_processDeco1)
    translucentBlendOp = "None";
 };
 
-singleton Material(corridor_small1_cor_roof)
+singleton Material(elevator_small0_floortile0_material)
 {
-   mapTo = "cor_roof";
+   mapTo = "floortile0-material";
    diffuseColor[0] = "0.64 0.64 0.64 1";
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";
@@ -99,9 +79,9 @@ singleton Material(corridor_small1_cor_roof)
    translucentBlendOp = "None";
 };
 
-singleton Material(evevator_small0_baseMetal0)
+singleton Material(elevator_small0_wall0_material)
 {
-   mapTo = "baseMetal0";
+   mapTo = "wall0-material";
    diffuseColor[0] = "0.64 0.64 0.64 1";
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";
@@ -109,9 +89,9 @@ singleton Material(evevator_small0_baseMetal0)
    translucentBlendOp = "None";
 };
 
-singleton Material(corridor_small2_cor_roof)
+singleton Material(elevator_small0_doorframe0_material)
 {
-   mapTo = "cor_roof";
+   mapTo = "doorframe0-material";
    diffuseColor[0] = "0.64 0.64 0.64 1";
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";
@@ -119,9 +99,9 @@ singleton Material(corridor_small2_cor_roof)
    translucentBlendOp = "None";
 };
 
-singleton Material(corridor_small3_cor_roof)
+singleton Material(elevator_small0_corridor0_material)
 {
-   mapTo = "cor_roof";
+   mapTo = "corridor0-material";
    diffuseColor[0] = "0.64 0.64 0.64 1";
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";
@@ -129,9 +109,9 @@ singleton Material(corridor_small3_cor_roof)
    translucentBlendOp = "None";
 };
 
-singleton Material(corridor_small4_basemetal0)
+singleton Material(elevator_small0_floortile1_material)
 {
-   mapTo = "basemetal0";
+   mapTo = "floortile1-material";
    diffuseColor[0] = "0.64 0.64 0.64 1";
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";
@@ -139,9 +119,9 @@ singleton Material(corridor_small4_basemetal0)
    translucentBlendOp = "None";
 };
 
-singleton Material(corridor_small4_cor_roof)
+singleton Material(elevator_small0_rooftile1_material)
 {
-   mapTo = "cor_roof";
+   mapTo = "rooftile1-material";
    diffuseColor[0] = "0.64 0.64 0.64 1";
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";
@@ -149,9 +129,189 @@ singleton Material(corridor_small4_cor_roof)
    translucentBlendOp = "None";
 };
 
-singleton Material(corridor_small5_cor_roof)
+singleton Material(elevator_small0_wall3_material)
 {
-   mapTo = "cor_roof";
+   mapTo = "wall3-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_metalBase0_material)
+{
+   mapTo = "metalBase0-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_floortile0_material)
+{
+   mapTo = "floortile0-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_wall0_material)
+{
+   mapTo = "wall0-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_doorframe0_material)
+{
+   mapTo = "doorframe0-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_corridor0_material)
+{
+   mapTo = "corridor0-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_floortile1_material)
+{
+   mapTo = "floortile1-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_rooftile1_material)
+{
+   mapTo = "rooftile1-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_wall3_material)
+{
+   mapTo = "wall3-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_metalBase0_material)
+{
+   mapTo = "metalBase0-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_floortile0_material)
+{
+   mapTo = "floortile0-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_wall0_material)
+{
+   mapTo = "wall0-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_doorframe0_material)
+{
+   mapTo = "doorframe0-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_corridor0_material)
+{
+   mapTo = "corridor0-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_floortile1_material)
+{
+   mapTo = "floortile1-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_rooftile1_material)
+{
+   mapTo = "rooftile1-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_wall3_material)
+{
+   mapTo = "wall3-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_metalBase0_material)
+{
+   mapTo = "metalBase0-material";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(elevator_small0_floortile0_material)
+{
+   mapTo = "floortile0-material";
    diffuseColor[0] = "0.64 0.64 0.64 1";
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";

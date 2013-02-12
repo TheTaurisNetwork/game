@@ -33,8 +33,16 @@ $dep[10] = "small_room0.dae";
 $dep[10, c] = "1";
 $dep[11] = "ship0.dae";
 $dep[11, c] = "2";
+$dep[12] = "InventoryStation";
+$dep[12, c] = "0";
+$dep[13] = "Lights";
+$dep[13, c] = "0";
+$dep[14] = "upElevator";
+$dep[14, c] = "0";
+$dep[15] = "downElevator";
+$dep[15, c] = "0";
 
-$dep[max] = 12;
+$dep[max] = 16;
 
 $nameToInv["Block1"] = "Block";
 $nameToInv["GeneratorStandard"] = "Standard Generator";
@@ -48,7 +56,10 @@ $nameToInv["small_corridor0.dae"] = "Small Corridor";
 $nameToInv["medium_corridor0.dae"] = "Medium Corridor";
 $nameToInv["small_room0.dae"] = "Small Room";
 $nameToInv["ship0.dae"] = "Exterior 0";
-
+$nameToInv["InventoryStation"] = "Inventory Station";
+$nameToInv["Lights"] = "Interior Lighting";
+$nameToInv["upElevator"] = "Up Elevator";
+$nameToInv["downElevator"] = "Down Elevator";
 
 //-----------------------------------------------------------------------------
 //  Shapebase functions
@@ -58,6 +69,8 @@ function shapeBase::testDeploy(%this, %data, %col)
 {
   if (isObject(%this.testingDeploy))
     %this.testingDeploy.delete();
+
+  echo(%data.getname());
 
   if (%data.getClassName() !$= "")
     %this.testingDeploy = spawnStaticShape(%data);

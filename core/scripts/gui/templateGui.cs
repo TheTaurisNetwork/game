@@ -9,24 +9,24 @@
 
 function insGeneratorDlg::onWake(%this)
 {
-
+  %this.awake = true;
 }
 
 function insGeneratorDlg::onSleep(%this)
 {
-
+  %this.awake = "";
 }
 
 //-----------------------------------------------------------------------------
 
-function insGeneratorDlg::loadInfo(%this, %gens, %toggle, %latching)
+function insGeneratorDlg::getDatastream(%this, %arg1, %arg2, %arg3)
 {
 
 }
 
 //-----------------------------------------------------------------------------
 
-function insGeneratorDlg::toogle(%this)
+function insGeneratorDlg::toggle(%this)
 {
 
 }

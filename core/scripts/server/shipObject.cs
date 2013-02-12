@@ -82,10 +82,66 @@ function ShipObject::getSpawnPoint(%this)
 {
   %pGroup = %this.getPieceGroup();
   %rand = getRandom(0, %pGroup.getCount());
-  return %pGroup.getObject(%rand);
+  return vectorAdd(%pGroup.getObject(%rand).getPosition(), "0 0 3");
 }
 
 //-----------------------------------------------------------------------------
+
+function ShipObject::gravityMode(%this, %t)
+{
+  %this.gravityMode = %t;
+
+  /*
+  %pGroup = %this.getPieceGroup();
+  %aGroup = %this.getAssetGroup();
+  for (%i = 0; %i < %pGroup.getCount(); %i++)
+  {
+    %obj = %this.getObject(%i);
+    if (%obj.className() $= "TSStatic")
+    {
+      if (%t)
+        %aGroup.activateGravity(%obj);
+      else
+        %aGroup.deactivateGravity(%obj);
+    }
+  }
+  */
+}
+
+//-----------------------------------------------------------------------------
+
+function ShipObject::elevatorMode(%this, %t)
+{
+  %this.elevatorMode = %t;
+  %aGroup = %this.getGroup().getAssetGroup();
+
+  if (%this.elevatorMode)
+    %aGroup.enableElevators();
+  else
+    %aGroup.disableElevators();
+}
+
+//-----------------------------------------------------------------------------
+
+function ShipObject::interiorLighting(%this, %t)
+{
+  %this.lights = %t;
+  %aGroup = %this.getGroup().getAssetGroup();
+
+  if (%this.lights)
+    %aGroup.enableLights();
+  else
+    %aGroup.disableLights();
+}
+
+//-----------------------------------------------------------------------------
+
+
+
+//-----------------------------------------------------------------------------
+
+
+
 
 
 

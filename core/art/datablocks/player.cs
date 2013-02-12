@@ -432,7 +432,7 @@ datablock DebrisData( PlayerDebris )
 // This is our default player datablock that all others will derive from.
 // ----------------------------------------------------------------------------
 
-datablock PlayerData(LightMale)
+datablock PlayerData(LightBuilder)
 {
    renderFirstPerson = true;
 

@@ -49,6 +49,14 @@ function BattleGame::onClientLeaveGame(%this, %client)
   Parent::onClientLeaveGame(%this, %client);
 }
 
+function BattleGame::defaultLoadout(%game, %player)
+{
+  %player.setInventory(rifle, 1);
+  %player.setInventory(pistol, 1);
+  %player.setInventory(pistolammo, 20);
+  %player.setInventory(nade, 2);
+  %player.setInventory(ammopack, 1);
+}
 //-----------------------------------------------------------------------------
 // Handle a player's death
 //-----------------------------------------------------------------------------

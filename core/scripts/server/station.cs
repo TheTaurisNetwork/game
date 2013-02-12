@@ -24,7 +24,7 @@ function Station::onInteract(%data, %this, %player)
   if (!%this.isEnabled())
     return false;
 
-  if (%data.getDatablockName() $= "InventoryStation")
+  if (%data.getName() $= "InventoryStation")
     %player.buyLoadOut();
 }
 

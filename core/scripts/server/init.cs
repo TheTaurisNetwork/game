@@ -76,14 +76,14 @@ function execServer()
    exec("./staticShape.cs");
    exec("./item.cs");
    exec("./weapon.cs");
-
    exec("./kickban.cs");
    exec("./spawn.cs");
    exec("./camera.cs");
    exec("./centerPrint.cs");
    exec("./commands.cs");
    exec("./inventory.cs");
-
+   exec("./TSNodes.cs");
+   
    exec("./defaultGame.cs");
    exec("./buildGame.cs");
    exec("./battleGame.cs");
@@ -94,7 +94,9 @@ function execServer()
    exec("./console.cs");
    exec("./hyperDrive.cs");
    exec("./station.cs");
-
+   exec("./lighting.cs");
+   exec("./elevator.cs");
+   
    exec("./shipGroup.cs");
    exec("./shipObject.cs");
    exec("./powerGroup.cs");

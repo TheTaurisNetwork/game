@@ -15,6 +15,9 @@ function BuildGame::initGameType(%game)
   parent::initGameType(%game);
 
   %this.clientLoadingDone = true;
+
+  $armourList[$armourList] = LightBuilder;
+  $armourList++;
 }
 
 //-----------------------------------------------------------------------------
@@ -43,11 +46,8 @@ function BuildGame::onClientEnterGame(%game, %this)
 
    if (%this.player)
    {
-     //%this.player.setInventory("TextureGun", 1);
-
-
-     //%this.player.mountImage("TextureGunImage", 0);
-     
+     %this.selFav = 0;
+     %game.defaultLoadout(%this.player);
      %this.player.setName("user");
    }
 }
@@ -66,20 +66,10 @@ function BuildGame::spawnPlayer(%game, %this, %spawnPoint)
    if (isObject(%this.player))
      return error("Attempting to create a player for a client that already has one");
 
-   %spawnDataBlock = "LightMaleBuilder";
-
-   if (isObject(%this.ship))
-   {
-     %ss = %this.ship.getSpawnPoint();
-     %x = getRandom(%ss.radius*-1, %ss.radius);
-     %y = getRandom(%ss.radius*-1, %ss.radius);
-
-     %spawnPoint = vectorAdd(%ss.getPosition(), %x SPC %y SPC 0);
-   }
+   %spawnDataBlock = "LightBuilder";
 
    // Create a default player
    %player = spawnObject("Player", %spawnDataBlock);
-
 
    // Treat %spawnPoint as a transform
    %player.setPosition(%spawnPoint);
@@ -141,6 +131,17 @@ function BuildGame::onClientDeath(%game, %this, %sourceObject, %sourceClient, %d
 
 //-----------------------------------------------------------------------------
 // Advanced Shit
+//-----------------------------------------------------------------------------
+
+function BuildGame::defaultLoadout(%game, %player)
+{
+  %player.setInventory(rifle, 1);
+  %player.setInventory(pistol, 1);
+  %player.setInventory(pistolammo, 20);
+  %player.setInventory(nade, 2);
+  %player.setInventory(ammopack, 1);
+}
+
 //-----------------------------------------------------------------------------
 
 function BuildGame::deployObject(%game, %obj, %player)

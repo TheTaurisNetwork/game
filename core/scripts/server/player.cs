@@ -23,7 +23,7 @@ function ShapeBase::interactLoop(%this)
     return;
   }
 
-  if (%obj.className() $= "Console" || %obj.className() $= "Generator" || %obj.className() $= "Drive")
+  if (%obj.className() $= "Console" || %obj.className() $= "Generator" || %obj.className() $= "Drive" || %obj.className() $= "Station")
   {
       if (%this.interactObj != %obj)
         commandtoClient(%this.client, 'playerCanInteract', 1);
@@ -51,6 +51,78 @@ function Armor::onTrigger(%data, %player, %trig, %val)
 }
 
 //-----------------------------------------------------------------------------
+
+function Armor::onAdd(%data, %player)
+{
+  %player.updateGravity();
+  %player.checkIfInside();
+}
+
+function ShapeBase::applyGravity(%this, %g)
+{
+  %this.field.fieldOn(%g);
+}
+
+function ShapeBase::updateGravity(%this)
+{
+  if (%this.getDamageState() $= "Destroyed")
+  {
+    %this.field.delete();
+    return;
+  }
+
+  if (!isObject(%this.field))
+  {
+    %this.field = new PhysicalZone()
+    {
+       gravityMod = "0";
+       polyhedron = "-0.5000000 0.5000000 0.0000000 1.0000000 0.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 0.0000000 1.0000000";
+       scale = "1 1 2";
+    };
+  }
+
+  %this.field.setPosition(%this.getPosition());
+  %this.schedule(50, updateGravity);
+}
+
+//-----------------------------------------------------------------------------
+
+function PhysicalZone::fieldOn(%this, %bool)
+{
+  %this.activeState = %bool;
+  if (%bool)
+    %this.activate();
+  else
+    %this.deactivate();
+}
+
+//-----------------------------------------------------------------------------
+
+function ShapeBase::checkIfInside(%this, %last)
+{
+  if (%this.getDamageState() $= "Destroyed")
+    return;
+
+  %pos = %this.getPosition();
+  %targetpos = vectoradd(%pos, vectorscale("0 0 -1", 20));
+
+  %down = getWord(containerraycast(%pos, %targetpos, $DefaultLOSMask, %this), 0);
+
+  %state = true;
+  if (%down)
+  {
+    if (%down.getGroup().getGroup().class $= "shipGroup")
+      if (%down.getGroup().getGroup().getShipObject().gravityMode)
+        %state = false;
+  }
+
+  if (%last != %state)
+    %this.applyGravity(%state);
+
+  %this.schedule(500, checkIfInside, %state);
+}
+
+//-----------------------------------------------------------------------------
 //
 //-----------------------------------------------------------------------------
 
@@ -74,6 +146,34 @@ function ShapeBase::canInteract(%this, %obj)
     return true;
   else if (%this.team != %obj.team)
     return false;
+}
+
+//-----------------------------------------------------------------------------
+
+function ShapeBase::flashLight(%this, %mode)
+{
+  if (%this.isPlayer())
+  {
+    if (%mode)
+    {
+      if (!isObject(%this.flObj))
+      {
+        %this.flObj = new SpotLight()
+        {
+          range = "20";
+          innerAngle = "40";
+          outerAngle = "45";
+          isEnabled = "1";
+          castShadows = "1";
+        };
+      }
+      %this.mountObject(%this.flObj, 0);
+      %this.flObj.mountPos = "0 0.4 0";
+      %this.flObj.mountRot = "1 0 0 12";
+    }
+    else
+      %this.flObj.delete();
+  }
 }
 
 //-----------------------------------------------------------------------------

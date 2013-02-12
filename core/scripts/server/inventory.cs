@@ -37,6 +37,7 @@ $nadeList = 3;
 $DbToName[Light] = "Light";
 $DbToName[Medium] = "Marine";
 $DbToName[Heavy] = "Armoured";
+$DbToName[LightBuilder] = "Engineer";
 
 $DbToName[rifle] = "Pulse Rifle";
 $DbToName[shotgun] = "Shotgun";
@@ -70,10 +71,13 @@ function serverCmdUse(%client, %data)
 
 function ShapeBase::buyLoadOut(%this)
 {
-  %this.validateLoadout(%client.selFav, %client.favLoadout);
-
   %client = %this.client;
+
+  validateLoadout(%client, %client.selFav, %client.favLoadout);
+
   %list = %client.favLoadout[%client.selFav];
+
+  warn(%client.favLoadout[%client.selFav]);
 
   %armour = nametoDb(getField(%list, 1));
   %this.setDatablock(%armour);
@@ -107,7 +111,7 @@ function ShapeBase::buyLoadOut(%this)
 
 //-----------------------------------------------------------------------------
 
-function ShapeBase::validateLoadout(%this, %index, %list)
+function validateLoadout(%client, %index, %list)
 {
   %pack = getField(%list, 4);
   %sec = getField(%list, 3);
@@ -117,7 +121,6 @@ function ShapeBase::validateLoadout(%this, %index, %list)
     if (%req != nametoDb(%sec))
       %list = strReplace(%list, %sec, $DbToName[%req]);
 
-  %client = %this.client;
   %client.favLoadout[%index] = %list;
 }
 
