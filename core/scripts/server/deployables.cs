@@ -41,8 +41,12 @@ $dep[14] = "upElevator";
 $dep[14, c] = "0";
 $dep[15] = "downElevator";
 $dep[15, c] = "0";
+$dep[16] = "doorframe0.dae";
+$dep[16, c] = "1";
+$dep[17] = "door";
+$dep[17, c] = "0";
 
-$dep[max] = 16;
+$dep[max] = 18;
 
 $nameToInv["Block1"] = "Block";
 $nameToInv["GeneratorStandard"] = "Standard Generator";
@@ -55,11 +59,13 @@ $nameToInv["HyperDriveMKIII"] = "Hyper-Drive MKIII";
 $nameToInv["small_corridor0.dae"] = "Small Corridor";
 $nameToInv["medium_corridor0.dae"] = "Medium Corridor";
 $nameToInv["small_room0.dae"] = "Small Room";
+$nameToInv["doorframe0.dae"] = "Small Doorframe";
 $nameToInv["ship0.dae"] = "Exterior 0";
 $nameToInv["InventoryStation"] = "Inventory Station";
 $nameToInv["Lights"] = "Interior Lighting";
 $nameToInv["upElevator"] = "Up Elevator";
 $nameToInv["downElevator"] = "Down Elevator";
+$nameToInv["door"] = "Door";
 
 //-----------------------------------------------------------------------------
 //  Shapebase functions

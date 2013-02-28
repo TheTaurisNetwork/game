@@ -26,7 +26,7 @@ function Lights::spawnLight(%data, %this)
 {
    %light = new PointLight()
    {
-      radius = "3";
+      radius = "10";
       isEnabled = "1";
    };
    missionCleanup.add(%light);
@@ -34,6 +34,8 @@ function Lights::spawnLight(%data, %this)
 
    %this.light = %light;
    %light.pointBase = %this;
+
+   %this.mountObject(%light);
 }
 
 

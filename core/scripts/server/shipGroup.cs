@@ -35,6 +35,20 @@ function ShipGroup::getAssetGroup(%this)
 
 //-----------------------------------------------------------------------------
 
+function ShipGroup::onLoaded(%this)
+{
+ error(%this);
+ if (%this.loading $= "1")
+ {
+
+   game.loadShip(%this);
+
+   %this.loading = "";
+ }
+}
+
+//-----------------------------------------------------------------------------
+
 function ShipGroup::CreatePieceGroup(%this)
 {
   %group = new simGroup()

@@ -177,7 +177,7 @@ function Drive::jumpSequence(%data, %this, %gameObject)
        if (%obj !$= "GroundPlane")
        {
          %obj.setPosition( VectorAdd(%obj.getPosition(), %offset) );
-         if (%obj.getDatablock())
+         if (%obj.className() !$= "TSStatic")
            %obj.getDatablock().onHyperjump(%obj);
        }
      }

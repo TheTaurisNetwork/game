@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.59.0 r39307</authoring_tool>
+    </contributor>
+    <created>2013-02-17T16:40:05</created>
+    <modified>2013-02-17T16:40:05</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="cor_roof-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color>0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float>50</float>
+            </shininess>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="floortile0-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color>0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float>50</float>
+            </shininess>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="wall0-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color>0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float>50</float>
+            </shininess>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="doorframe0-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color>0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float>50</float>
+            </shininess>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="rooftile0-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color>0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float>50</float>
+            </shininess>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="corridor0-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color>0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float>50</float>
+            </shininess>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="processDeco0-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color>0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float>50</float>
+            </shininess>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="wall3-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color>0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float>50</float>
+            </shininess>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="rooftile1-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color>0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float>50</float>
+            </shininess>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="basemetal0-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color>0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float>50</float>
+            </shininess>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="cor_roof-material" name="cor_roof">
+      <instance_effect url="#cor_roof-effect"/>
+    </material>
+    <material id="floortile0-material" name="floortile0">
+      <instance_effect url="#floortile0-effect"/>
+    </material>
+    <material id="wall0-material" name="wall0">
+      <instance_effect url="#wall0-effect"/>
+    </material>
+    <material id="doorframe0-material" name="doorframe0">
+      <instance_effect url="#doorframe0-effect"/>
+    </material>
+    <material id="rooftile0-material" name="rooftile0">
+      <instance_effect url="#rooftile0-effect"/>
+    </material>
+    <material id="corridor0-material" name="corridor0">
+      <instance_effect url="#corridor0-effect"/>
+    </material>
+    <material id="processDeco0-material" name="processDeco0">
+      <instance_effect url="#processDeco0-effect"/>
+    </material>
+    <material id="wall3-material" name="wall3">
+      <instance_effect url="#wall3-effect"/>
+    </material>
+    <material id="rooftile1-material" name="rooftile1">
+      <instance_effect url="#rooftile1-effect"/>
+    </material>
+    <material id="basemetal0-material" name="basemetal0">
+      <instance_effect url="#basemetal0-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Plane-mesh">
+      <mesh>
+        <source id="Plane-mesh-positions">
+          <float_array id="Plane-mesh-positions-array" count="330">1.054947 -10.38013 -0.4700916 1.054947 -10.38013 -1.020201 1.054947 -10.38013 2.517899 1.054947 -10.38013 3.083052 0.2276418 -10.38013 3.083052 0.124229 -10.38013 2.5179 0.2276418 -10.38013 -1.020201 0.08975785 -10.38013 -1.159238 -0.0136553 -10.38013 2.682932 0.08975809 -10.38013 3.235087 -0.0136553 -10.38013 -1.159238 -0.01365524 -10.38013 3.235087 -1.702736 -10.38013 3.235087 -1.702736 -10.38013 -1.159238 -1.702736 -10.38013 2.682932 -1.702736 -10.38013 -0.6351241 -1.771678 -10.38013 -1.159238 -1.771678 -10.38013 3.235087 -1.84062 -10.38013 3.203893 -1.84062 -10.38013 -1.133243 -1.909562 -10.38013 -1.076056 -1.909562 -10.38013 3.141507 -1.978504 -10.38013 3.031485 -1.978504 -10.38013 -0.9660343 -2.323214 -10.38013 -0.03084862 -2.323215 -10.38013 2.041288 -1.978504 -10.38013 0.1350286 -1.978505 -10.38013 1.91278 -1.978505 -10.38013 1.91278 -1.978504 -10.38013 0.1350286 -2.323214 -10.38013 -0.03084862 -2.323215 -10.38013 2.041288 -1.978504 -10.38013 -0.9660343 -1.702736 -10.38013 -0.6351241 -1.978504 -10.38013 3.031485 -1.702736 -10.38013 2.682932 -1.909562 -10.38013 -1.076056 -1.909562 -10.38013 3.141507 -1.84062 -10.38013 3.203893 -1.84062 -10.38013 -1.133243 -1.771678 -10.38013 -1.159238 -1.771678 -10.38013 3.235087 -1.702736 -10.38013 3.235087 -0.01365524 -10.38013 3.235087 -0.0136553 -10.38013 2.682932 -0.0136553 -10.38013 -1.159238 -0.01365518 -10.38013 -0.6351243 0.08975809 -10.38013 3.235087 0.124229 -10.38013 2.5179 0.2276418 -10.38013 3.083052 0.2276418 -10.38013 -1.020201 0.1242287 -10.38013 -0.4700916 1.054947 -10.38013 -1.020201 1.054947 -10.38013 -0.4700916 1.054947 -10.38013 2.517899 1.054947 -10.38013 3.083052 1.054947 -9.763037 -0.4700916 1.054947 -9.763037 -1.020201 1.054947 -9.763037 3.083052 1.054947 -9.763037 2.517899 0.2276418 -9.763037 3.083052 0.124229 -9.763037 2.5179 0.1242287 -9.763037 -0.4700916 0.2276418 -9.763037 -1.020201 -0.01365518 -9.763037 -0.6351243 0.08975785 -9.763037 -1.159238 0.08975809 -9.763037 3.235087 -0.0136553 -9.763037 2.682932 -0.0136553 -9.763037 -1.159238 -0.01365524 -9.763037 3.235087 -1.702736 -9.763037 -0.6351241 -1.702736 -9.763037 -1.159238 -1.702736 -9.763037 2.682932 -1.702736 -9.763037 3.235087 -1.771678 -9.763037 -1.159237 -1.771678 -9.763037 3.235087 -1.84062 -9.763037 3.203893 -1.84062 -9.763037 -1.133243 -1.909562 -9.763037 -1.076056 -1.909562 -9.763037 3.141507 -1.978504 -9.763037 3.031485 -1.978504 -9.763037 -0.9660338 -1.978505 -9.763037 1.91278 -2.323215 -9.763037 2.041288 -1.978504 -9.763037 0.1350286 -2.323214 -9.763037 -0.03084862 -3.006617 -9.893955 3.666633 -3.007347 -9.893953 -1.641873 -2.01179 -9.893955 2.438281 -2.024461 -9.893955 -0.378611 0.9699777 -9.893953 -0.9207651 0.9722034 -9.89364 -2.484971 -1.848816 -9.893953 -2.484916 -1.507718 -9.893953 -0.9207646 -1.849764 -9.893955 4.551778 0.9693052 -9.89331 4.551777 -1.510723 -9.893953 2.975532 0.9669726 -9.893953 2.97553 -3.006605 -10.23284 3.666638 -1.849752 -10.23284 4.551783 -2.011778 -10.23284 2.438289 -1.510711 -10.23284 2.975539 0.9693175 -10.2322 4.551782 0.9669849 -10.23284 2.975538 0.9722158 -10.23253 -2.484966 -1.848804 -10.23284 -2.484911 0.96999 -10.23284 -0.9207571 -1.507705 -10.23284 -0.9207566 -2.024449 -10.23284 -0.378603 -3.007334 -10.23284 -1.641867</float_array>
+          <technique_common>
+            <accessor source="#Plane-mesh-positions-array" count="110" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane-mesh-normals">
+          <float_array id="Plane-mesh-normals-array" count="294">0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0 1 0 0 1 0 -1 0 0 -1 0 -0.4235664 0 -0.9058504 0.5757012 0 -0.8176519 1 0 -2.16701e-7 1 0 -2.10933e-7 0 0 1 -7.68499e-7 0 -1 0 0 1 -4.32281e-7 1.93178e-7 -1 -0.7674049 0 0.6411626 0.7100456 0 -0.7041556 0.74074 0 0.6717919 -0.7674038 0 -0.6411641 2.3055e-6 0 -1 -4.61098e-6 0 1 1.41153e-7 0 1 -2.82306e-7 0 -1 2.82306e-7 0 -1 0 0 1 -1.72912e-6 1.93178e-7 -1 0 0 1 -0.4122275 0 0.911081 -0.3528012 1.80756e-7 -0.9356982 -0.638442 0 -0.76967 -0.6709724 0 0.7414823 -0.8473806 0 0.5309859 -0.8473803 0 -0.5309865 0.9414649 0 -0.3371108 -0.9444097 0 0.3287708 0.9414651 0 0.3371104 -0.9382884 -1.38262e-7 -0.3458539 -1 0 0 1 0 2.01169e-7 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 9.60306e-7 1 2.33155e-7 -4.18649e-7 1 8.70631e-7 -5.90331e-5 1 1.06385e-4 -1.21713e-4 1 -2.16289e-4 -1.23144e-6 1 0 -0.6076636 -1.01107e-5 0.7941946 0.7313045 1.04217e-5 -0.6820511 0.9999989 3.62906e-5 -0.001479804 -5.29242e-7 -2.35683e-5 -1 3.34755e-7 1.54777e-5 1 -1.91833e-5 -1.47749e-5 -1 1.92452e-7 2.35683e-5 1 0.7238668 4.24878e-5 0.6899397 -0.588389 -3.3368e-5 -0.808578 0.999999 3.63471e-5 0.001422882 0.9999899 3.64757e-5 -0.004498124 -1 -3.65816e-5 1.37477e-4 1.23144e-6 -1 0 1.21713e-4 -1 2.1629e-4 5.90331e-5 -1 -1.06385e-4 4.18651e-7 -1 -8.7063e-7 -9.60305e-7 -1 -2.33155e-7</float_array>
+          <technique_common>
+            <accessor source="#Plane-mesh-normals-array" count="98" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane-mesh-map-0">
+          <float_array id="Plane-mesh-map-0-array" count="696">0.7683187 0.01130098 0.8707805 0.01130098 0.8707805 0.2506638 0.7683187 0.2805842 0.126863 0.01130098 0.2265974 0.01130098 0.2265974 0.2805842 0.126863 0.2506638 0.126863 0.2506638 0.2265974 0.2805842 0.1966771 0.320478 0.1016556 0.2905576 0.7683187 0.2805842 0.8707805 0.2506638 0.8983444 0.2905576 0.798239 0.320478 0.1016556 0.320478 0.1966771 0.320478 0.1966771 0.8091771 0.1016556 0.8091771 0.8983444 0.320478 0.8983444 0.8091771 0.798239 0.8091771 0.798239 0.320478 0.8614315 0.8889645 0.6819093 0.988699 0.6586107 0.8889645 0.798239 0.8091771 0.1366833 0.8889645 0.1966771 0.8091771 0.3363054 0.8889645 0.306232 0.988699 0.6586107 0.8889645 0.6819093 0.988699 0.306232 0.988699 0.3363054 0.8889645 0.1966771 0.8091771 0.1366833 0.8889645 0.1167364 0.8690176 0.1966771 0.8091771 0.1167364 0.8690176 0.1063684 0.8490708 0.1966771 0.8091771 0.1063684 0.8490708 0.1016556 0.8291239 0.1016556 0.8091771 0.1966771 0.8091771 0.1016556 0.8291239 0.8983444 0.8091771 0.8983444 0.8291239 0.798239 0.8091771 0.798239 0.8091771 0.8983444 0.8291239 0.892689 0.8490708 0.798239 0.8091771 0.892689 0.8490708 0.8813784 0.8690176 0.798239 0.8091771 0.8813784 0.8690176 0.8614315 0.8889645 0.1966771 0.320478 0.1016556 0.320478 0.1016556 0.2905576 0.798239 0.320478 0.8983444 0.2905576 0.8983444 0.320478 0.8983444 0.320478 0.8983444 0.8091771 0.8983444 0.8091771 0.8983444 0.320478 0.798239 0.8091771 0.798239 0.320478 0.798239 0.320478 0.798239 0.8091771 0.2265974 0.01130098 0.126863 0.01130098 0.126863 0.01130098 0.2265974 0.01130098 0.8707805 0.01130098 0.7683187 0.01130098 0.7683187 0.01130098 0.8707805 0.01130098 0.8707805 0.2506638 0.8707805 0.01130098 0.8707805 0.01130098 0.8707805 0.2506638 0.9999958 0.07903093 0.8808279 0.07902473 0.8808318 1.22696e-5 1 1.86886e-5 0.119175 0.07902622 3.07577e-6 0.07903093 0 1.59973e-5 0.1191719 1.13001e-5 0.126863 0.01130098 0.126863 0.2506638 0.126863 0.2506638 0.126863 0.01130098 0.1412438 0.07902532 0.119175 0.07902622 0.1191719 1.13001e-5 0.1412408 1.03974e-5 0.126863 0.2506638 0.1016556 0.2905576 0.1016556 0.2905576 0.126863 0.2506638 0.8983444 0.2905576 0.8707805 0.2506638 0.8707805 0.2506638 0.8983444 0.2905576 0.8808279 0.07902473 0.8587599 0.07902371 0.8587634 1.09658e-5 0.8808318 1.22696e-5 0.1016556 0.2905576 0.1016556 0.320478 0.1016556 0.320478 0.1016556 0.2905576 0.8983444 0.320478 0.8983444 0.2905576 0.8983444 0.2905576 0.8983444 0.320478 0.3575186 0.07901716 0.1412438 0.07902532 0.1412408 1.03974e-5 0.3575161 2.34026e-6 0.1016556 0.320478 0.1016556 0.8091771 0.1016556 0.8091771 0.1016556 0.320478 0.6424911 0.07901519 0.6424934 1.92236e-6 0.8587634 1.09658e-5 0.8587599 0.07902371 0.8983444 0.320478 0.8983444 0.320478 0.8983444 0.8091771 0.8983444 0.8091771 0.1016556 0.8091771 0.1016556 0.8291239 0.1016556 0.8291239 0.1016556 0.8091771 0.8983444 0.8091771 0.8983444 0.8091771 0.8983444 0.8291239 0.8983444 0.8291239 0.8983444 0.8291239 0.8983444 0.8291239 0.892689 0.8490708 0.892689 0.8490708 0.1016556 0.8291239 0.1063684 0.8490708 0.1063684 0.8490708 0.1016556 0.8291239 0.1063684 0.8490708 0.1167364 0.8690176 0.1167364 0.8690176 0.1063684 0.8490708 0.892689 0.8490708 0.892689 0.8490708 0.8813784 0.8690176 0.8813784 0.8690176 0.8813784 0.8690176 0.8813784 0.8690176 0.8614315 0.8889645 0.8614315 0.8889645 0.1167364 0.8690176 0.1366833 0.8889645 0.1366833 0.8889645 0.1167364 0.8690176 0.5713231 0.07901424 0.5713236 0 0.6424934 1.92236e-6 0.6424911 0.07901519 0.8614315 0.8889645 0.8614315 0.8889645 0.6819093 0.988699 0.6819093 0.988699 0.4286877 0.07901531 0.3575186 0.07901716 0.3575161 2.34026e-6 0.4286865 8.1909e-7 0.1366833 0.8889645 0.306232 0.988699 0.306232 0.988699 0.1366833 0.8889645 0.306232 0.988699 0.6819093 0.988699 0.6819093 0.988699 0.306232 0.988699 0.5713231 0.07901424 0.4286877 0.07901531 0.4286865 8.1909e-7 0.5713236 0 0.7683187 0.01130098 0.7683187 0.2805841 0.8707805 0.2506638 0.8707805 0.01130098 0.126863 0.01130098 0.126863 0.2506638 0.2265974 0.2805841 0.2265974 0.01130098 0.126863 0.2506638 0.1016556 0.2905576 0.1966771 0.320478 0.2265974 0.2805841 0.7683187 0.2805841 0.798239 0.320478 0.8983444 0.2905576 0.8707805 0.2506638 0.1016556 0.320478 0.1016556 0.8091771 0.1966771 0.8091771 0.1966771 0.320478 0.8983444 0.320478 0.798239 0.320478 0.798239 0.8091771 0.8983444 0.8091771 0.8614315 0.8889645 0.798239 0.8091771 0.6586107 0.8889645 0.6819093 0.988699 0.1366833 0.8889645 0.306232 0.988699 0.3363054 0.8889645 0.1966771 0.8091771 0.6586107 0.8889645 0.3363054 0.8889645 0.306232 0.988699 0.6819093 0.988699 0.1966771 0.8091771 0.1167364 0.8690176 0.1366833 0.8889645 0.1966771 0.8091771 0.1063684 0.8490708 0.1167364 0.8690176 0.1966771 0.8091771 0.1016556 0.8291239 0.1063684 0.8490708 0.1016556 0.8091771 0.1016556 0.8291239 0.1966771 0.8091771 0.8983444 0.8091771 0.798239 0.8091771 0.8983444 0.8291239 0.798239 0.8091771 0.892689 0.8490708 0.8983444 0.8291239 0.798239 0.8091771 0.8813784 0.8690176 0.892689 0.8490708 0.798239 0.8091771 0.8614315 0.8889645 0.8813784 0.8690176 0.1966771 0.320478 0.1016556 0.2905576 0.1016556 0.320478 0.798239 0.320478 0.8983444 0.320478 0.8983444 0.2905576 0.8742104 0.9998168 0.6996481 0.749833 0.2993367 0.7530168 0.1198133 1 0.2222909 0.6231674 7.57575e-6 0.7088801 0.1198133 1 0.2993367 0.7530168 0 3.11526e-6 7.57575e-6 0.7088801 0.2222909 0.6231674 0.2222907 5.6246e-4 0.9999992 0.7091184 0.9999992 7.31463e-4 0.7759971 0.00131756 0.7759973 0.6239229 0.8742104 0.9998168 0.9999992 0.7091184 0.7759973 0.6239229 0.6996481 0.749833 0.8740234 1.00293 1 0.7353516 0.6728516 0.6572266 0.625 0.7734375 0.8740234 1.00293 1 0.7353516 0.6728516 0.6572266 0.625 0.7734375 1 0.7353516 1 0.002929687 0.6728516 0.0859375 0.6728516 0.6572266 1 0.7353516 1 0.002929687 0.6728516 0.0859375 0.6728516 0.6572266 1 0.7353516 1 0.002929687 0.6728516 0.0859375 0.6728516 0.6572266 0 0.006835937 0 0.7353516 0.3261719 0.6572266 0.3261719 0.08496093 0 0.006835937 0 0.7353516 0.3261719 0.6572266 0.3261719 0.08496093 0.3261719 0.6572266 0 0.7353516 0.1201171 1.00293 0.3740234 0.7763672 0.3261719 0.6572266 0 0.7353516 0.1201171 1.00293 0.3740234 0.7763672 0 0.006835937 0 0.7353516 0.3261719 0.6572266 0.3261719 0.08496093 0.8740234 1.00293 0.625 0.7734375 0.3740234 0.7763672 0.1201171 1.00293 0.8740234 1.00293 0.625 0.7734375 0.3740234 0.7763672 0.1201171 1.00293 0.8742111 0.9998137 0.6996493 0.7498296 0.7759985 0.6239197 1 0.7091153 1 0.7091153 0.7759985 0.6239197 0.7759984 0.001314461 1 7.28348e-4 7.04721e-7 0 0.2222919 5.59345e-4 0.2222919 0.6231643 8.36857e-6 0.708877 0.2222919 0.6231643 0.299338 0.7530137 0.119814 0.9999973 8.36857e-6 0.708877 0.8742111 0.9998137 0.119814 0.9999973 0.299338 0.7530137 0.6996493 0.7498296</float_array>
+          <technique_common>
+            <accessor source="#Plane-mesh-map-0-array" count="348" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane-mesh-vertices">
+          <input semantic="POSITION" source="#Plane-mesh-positions"/>
+        </vertices>
+        <polylist material="doorframe04" count="61">
+          <input semantic="VERTEX" source="#Plane-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 4 4 4 4 4 4 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>2 0 0 3 0 1 4 0 2 5 0 3 1 1 4 0 1 5 51 1 6 6 1 7 6 2 8 51 2 9 46 2 10 7 2 11 5 3 12 4 3 13 9 3 14 8 3 15 10 4 16 46 4 17 15 4 18 13 4 19 11 5 20 12 5 21 14 5 22 8 5 23 22 6 24 25 6 25 27 6 26 14 6 27 23 7 28 15 7 29 26 7 30 24 7 31 27 8 32 25 8 33 24 8 34 26 8 35 15 9 36 23 9 37 20 9 38 15 10 39 20 10 40 19 10 41 15 11 42 19 11 43 16 11 44 13 12 45 15 12 46 16 12 47 12 13 48 17 13 49 14 13 50 14 14 51 17 14 52 18 14 53 14 15 54 18 15 55 21 15 56 14 16 57 21 16 58 22 16 59 46 17 60 10 17 61 7 17 62 8 18 63 9 18 64 11 18 65 11 19 66 12 20 67 42 21 68 43 22 69 14 23 70 8 24 71 44 25 72 35 26 73 53 27 74 52 27 75 57 27 76 56 27 77 55 28 78 54 28 79 59 28 80 58 28 81 49 29 82 55 29 83 58 29 84 60 29 85 52 32 94 50 32 95 63 32 96 57 32 97 50 34 102 7 34 103 65 34 104 63 34 105 47 35 106 49 35 107 60 35 108 66 35 109 7 37 114 45 37 115 68 37 116 65 37 117 43 38 118 47 38 119 66 38 120 69 38 121 45 40 126 13 40 127 71 40 128 68 40 129 43 42 134 69 42 135 73 42 136 42 42 137 13 43 138 40 43 139 74 43 140 71 43 141 42 44 142 73 44 143 75 44 144 41 44 145 41 45 146 75 45 147 76 45 148 38 45 149 40 46 150 39 46 151 77 46 152 74 46 153 39 47 154 36 47 155 78 47 156 77 47 157 38 48 158 76 48 159 79 48 160 37 48 161 37 49 162 79 49 163 80 49 164 34 49 165 36 50 166 32 50 167 81 50 168 78 50 169 34 52 174 80 52 175 83 52 176 31 52 177 32 54 182 30 54 183 85 54 184 81 54 185 30 55 186 31 55 187 83 55 188 85 55 189 59 57 194 61 57 195 60 57 196 58 57 197 57 58 198 63 58 199 62 58 200 56 58 201 63 59 202 65 59 203 64 59 204 62 59 205 61 60 206 67 60 207 66 60 208 60 60 209 68 61 210 71 61 211 70 61 212 64 61 213 69 62 214 67 62 215 72 62 216 73 62 217 80 63 218 72 63 219 82 63 220 83 63 221 81 64 222 85 64 223 84 64 224 70 64 225 82 65 226 84 65 227 85 65 228 83 65 229 70 66 230 78 66 231 81 66 232 70 67 233 77 67 234 78 67 235 70 68 236 74 68 237 77 68 238 71 69 239 74 69 240 70 69 241 73 70 242 72 70 243 75 70 244 72 71 245 76 71 246 75 71 247 72 72 248 79 72 249 76 72 250 72 73 251 80 73 252 79 73 253 64 74 254 65 74 255 68 74 256 67 75 257 69 75 258 66 75 259</p>
+        </polylist>
+        <polylist material="wall38" count="22">
+          <input semantic="VERTEX" source="#Plane-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>86 76 260 88 76 261 89 76 262 87 76 263 93 77 264 92 77 265 87 77 266 89 77 267 91 78 268 92 78 269 93 78 270 90 78 271 94 79 272 95 79 273 97 79 274 96 79 275 86 80 276 94 80 277 96 80 278 88 80 279 94 81 280 86 81 281 98 81 282 99 81 283 88 82 284 96 82 285 101 82 286 100 82 287 97 83 288 95 83 289 102 83 290 103 83 291 96 84 292 97 84 293 103 84 294 101 84 295 95 85 296 94 85 297 99 85 298 102 85 299 92 86 300 91 86 301 104 86 302 105 86 303 90 87 304 93 87 305 107 87 306 106 87 307 93 88 308 89 88 309 108 88 310 107 88 311 87 89 312 92 89 313 105 89 314 109 89 315 91 90 316 90 90 317 106 90 318 104 90 319 89 91 320 88 91 321 100 91 322 108 91 323 86 92 324 87 92 325 109 92 326 98 92 327 98 93 328 100 93 329 101 93 330 99 93 331 99 94 332 101 94 333 103 94 334 102 94 335 104 95 336 106 95 337 107 95 338 105 95 339 107 96 340 108 96 341 109 96 342 105 96 343 98 97 344 109 97 345 108 97 346 100 97 347</p>
+        </polylist>
+        <polylist material="basemetal010" count="9">
+          <input semantic="VERTEX" source="#Plane-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 4 4 4 4 4 4 </vcount>
+          <p>54 30 86 48 30 87 61 30 88 59 30 89 51 31 90 53 31 91 56 31 92 62 31 93 46 33 98 51 33 99 62 33 100 64 33 101 48 36 110 44 36 111 67 36 112 61 36 113 33 39 122 46 39 123 64 39 124 70 39 125 35 41 130 72 41 131 67 41 132 44 41 133 28 51 170 82 51 171 72 51 172 35 51 173 29 53 178 33 53 179 70 53 180 84 53 181 28 56 190 29 56 191 84 56 192 82 56 193</p>
+        </polylist>
+      </mesh>
+      <extra><technique profile="MAYA"><double_sided>1</double_sided></technique></extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Plane" type="NODE">
+        <translate sid="location">-0.8562646 0 0.009621024</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 89.99999</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <scale sid="scale">0.8472865 0.8472865 0.8472865</scale>
+        <instance_geometry url="#Plane-mesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="cor_roof1" target="#cor_roof-material">
+                <bind_vertex_input semantic="UVTex" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="floortile02" target="#floortile0-material">
+                <bind_vertex_input semantic="UVTex" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="wall03" target="#wall0-material">
+                <bind_vertex_input semantic="UVTex" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="doorframe04" target="#doorframe0-material">
+                <bind_vertex_input semantic="UVTex" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="rooftile05" target="#rooftile0-material">
+                <bind_vertex_input semantic="UVTex" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="corridor06" target="#corridor0-material">
+                <bind_vertex_input semantic="UVTex" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="processDeco07" target="#processDeco0-material">
+                <bind_vertex_input semantic="UVTex" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="wall38" target="#wall3-material">
+                <bind_vertex_input semantic="UVTex" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="rooftile19" target="#rooftile1-material">
+                <bind_vertex_input semantic="UVTex" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="basemetal010" target="#basemetal0-material">
+                <bind_vertex_input semantic="UVTex" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

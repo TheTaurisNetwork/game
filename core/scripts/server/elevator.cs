@@ -17,8 +17,6 @@ function Elevator::onDeploy(%data, %this, %player)
 
 function Elevator::setUp(%data, %this, %player)
 {
- %this.setScale("1 1 .1");
-
  return %this.setPwrBranch( %this.pwrBranch );
 }
 
@@ -38,7 +36,7 @@ function Elevator::onEnabled(%data, %this)
   if (!isObject(%this.emitter))
   {
     %datablock = %data.mode ? "ElevatorUpEmitter" : "ElevatorDownEmitter";
-    %offset = %data.mode ? "0 0 4" : "0 0 8";
+    %offset = %data.mode ? "0 0 1" : "0 0 5";
 
     %this.emitter = new ParticleEmitterNode()
     {
@@ -102,9 +100,9 @@ function elevatorTrigger::onEnterTrigger(%this,%trigger,%obj)
   if (%trigger.up)
     %mod = -1;
   else
-    %mod = 1;
+    %mod = 0.5;
 
-  warn("enter" SPC %mod);
+  //warn("enter" SPC %mod);
 
   %obj.field.gravityMod = %mod;
   %obj.field.activate();
@@ -114,7 +112,7 @@ function elevatorTrigger::onEnterTrigger(%this,%trigger,%obj)
 
 function elevatorTrigger::onLeaveTrigger(%this,%trigger,%obj)
 {
-  warn("leave");
+  //warn("leave");
   %obj.field.gravityMod = 0;
   %obj.field.fieldOn(%obj.field.activeState);
 }

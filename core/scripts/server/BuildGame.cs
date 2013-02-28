@@ -209,11 +209,11 @@ function BuildGame::prepareLoad(%game, %client, %file)
 
 function BuildGame::loadShip(%game, %ship)
 {
+  buildGroup.add(%ship);
+
   %game.initShipGameObject(%ship, %game.clientLoading);
 
   %ship.refreshAssetGroup();
-
-  buildGroup.add(%ship);
 
   %game.clientLoading.buildGroup = %ship;
 
@@ -229,6 +229,7 @@ function BuildGame::initShipGameObject(%game, %ship, %client)
   {
     class = ShipGameObject;
     internalName = "gameObject";
+    canSave = false;
   };
   %ship.add(%o);
 

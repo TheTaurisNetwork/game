@@ -125,7 +125,7 @@ datablock staticShapeData(upElevator)
 {
    category = "Assets";
    className = Elevator;
-   shapeFile = "core/art/shapes/cube.dae";
+   shapeFile = "core/art/shapes/elevatorPad.dae";
 
    typeMask = $TypeMasks::StaticShapeObjectType;
 
@@ -141,7 +141,7 @@ datablock staticShapeData(downElevator)
 {
    category = "Assets";
    className = Elevator;
-   shapeFile = "core/art/shapes/cube.dae";
+   shapeFile = "core/art/shapes/elevatorPad.dae";
 
    typeMask = $TypeMasks::StaticShapeObjectType;
 
@@ -153,5 +153,18 @@ datablock staticShapeData(downElevator)
 
 //-----------------------------------------------------------------------------
 
+datablock staticShapeData(door)
+{
+   category = "Assets";
+   className = Door;
+   shapeFile = "core/art/shapes/door0.dae";
+
+   typeMask = $TypeMasks::StaticShapeObjectType;
+
+   needsPower = true;
+   pwrRequired = 1;
+};
+
+//-----------------------------------------------------------------------------
 
 

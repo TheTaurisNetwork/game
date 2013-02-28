@@ -23,7 +23,7 @@ function ShapeBase::interactLoop(%this)
     return;
   }
 
-  if (%obj.className() $= "Console" || %obj.className() $= "Generator" || %obj.className() $= "Drive" || %obj.className() $= "Station")
+  if (%obj.className() $= "Door" || %obj.className() $= "Console" || %obj.className() $= "Generator" || %obj.className() $= "Drive" || %obj.className() $= "Station")
   {
       if (%this.interactObj != %obj)
         commandtoClient(%this.client, 'playerCanInteract', 1);
@@ -57,6 +57,15 @@ function Armor::onAdd(%data, %player)
   %player.updateGravity();
   %player.checkIfInside();
 }
+
+//-----------------------------------------------------------------------------
+
+function Armor::onHyperJump(%data, %player)
+{
+
+}
+
+//-----------------------------------------------------------------------------
 
 function ShapeBase::applyGravity(%this, %g)
 {
@@ -160,7 +169,7 @@ function ShapeBase::flashLight(%this, %mode)
       {
         %this.flObj = new SpotLight()
         {
-          range = "20";
+          range = "40";
           innerAngle = "40";
           outerAngle = "45";
           isEnabled = "1";

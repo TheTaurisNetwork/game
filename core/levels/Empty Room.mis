@@ -91,17 +91,7 @@ Position = "0 0 0";
             lockCount = "0";
       };
    };
-   new GroundPlane() {
-      canSaveDynamicFields = "1";
-      Position = "0 0 0";
-      rotation = "1 0 0 0";
-      scale = "1 1 1";
-      squareSize = "128";
-      scaleU = "12";
-      scaleV = "12";
-      Material = "BlankWhite";
-         Enabled = "1";
-   };
+    
 };
 //--- OBJECT WRITE END ---
 

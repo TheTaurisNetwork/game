@@ -15,7 +15,7 @@ datablock ParticleData(ElevatorUp)
    dragCoefficient      = 7.0;
    gravityCoefficient   = -0.4;   // rises slowly
    inheritedVelFactor   = 0.00;
-   lifetimeMS           = 3000;
+   lifetimeMS           = 2000;
    lifetimeVarianceMS   = 250;
    useInvAlpha          = true;
    spinRandomMin        = -30.0;
@@ -41,7 +41,7 @@ datablock ParticleEmitterData(ElevatorUpEmitter)
    velocityVariance = 5.0;
 
    thetaMin         = 0.0;
-   thetaMax         = 180.0;
+   thetaMax         = 30.0;
 
    particles        = ElevatorUp;
 };
@@ -54,7 +54,7 @@ datablock ParticleData(ElevatorDown)
    dragCoefficient      = 7.0;
    gravityCoefficient   = 0.3;   // rises slowly
    inheritedVelFactor   = 0.00;
-   lifetimeMS           = 3000;
+   lifetimeMS           = 2500;
    lifetimeVarianceMS   = 250;
    useInvAlpha          = true;
    spinRandomMin        = -30.0;
@@ -81,7 +81,7 @@ datablock ParticleEmitterData(ElevatorDownEmitter)
    velocityVariance = 5.0;
 
    thetaMin         = 0.0;
-   thetaMax         = 180.0;
+   thetaMax         = 30.0;
 
 
    particles        = ElevatorDown;

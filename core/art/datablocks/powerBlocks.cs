@@ -14,7 +14,7 @@ datablock staticShapeData(GeneratorStandard)
 {
    category = "Assets";
    className = Generator;
-   shapeFile = "core/art/shapes/cube.dae";
+   shapeFile = "core/art/shapes/generator.dae";
 
    typeMask = $TypeMasks::StaticShapeObjectType;
 

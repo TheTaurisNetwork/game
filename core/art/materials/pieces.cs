@@ -316,6 +316,40 @@ singleton Material(column1)
 
 //------------------------------------------------------------------------------
 
+singleton Material(border0)
+{
+   mapTo = "border0";
+
+   diffuseMap[0] = "~/art/textures/column_color";
+   normalMap[0] = "~/art/textures/column_normal";
+   specularMap[0] = "~/art/textures/column_spec";
+
+   specular[0] = "0.9 0.9 0.9 1";
+   specularPower[0] = 10;
+
+   doubleSided = false;
+   translucent = false;
+   translucentBlendOp = "None";
+};
+
+singleton Material(floorGrate0)
+{
+   mapTo = "floorGrate0";
+
+   diffuseMap[0] = "~/art/textures/rim_color";
+   normalMap[0] = "~/art/textures/rim_normal";
+   specularMap[0] = "~/art/textures/rim_spec";
+
+   specular[0] = "0.9 0.9 0.9 1";
+   specularPower[0] = 10;
+
+   doubleSided = false;
+   translucent = false;
+   translucentBlendOp = "None";
+};
+
+//------------------------------------------------------------------------------
+
 singleton Material(metalBase0)
 {
    mapTo = "metalBase0";
@@ -435,6 +469,70 @@ singleton Material(column1)
    diffuseMap[0] = "~/art/textures/column_color";
    normalMap[0] = "~/art/textures/column_normal";
    specularMap[0] = "~/art/textures/column_spec";
+
+   specular[0] = "0.9 0.9 0.9 1";
+   specularPower[0] = 10;
+
+   doubleSided = false;
+   translucent = false;
+   translucentBlendOp = "None";
+};
+
+singleton Material(door0)
+{
+   mapTo = "door0";
+
+   diffuseMap[0] = "~/art/textures/door2_full_color";
+   normalMap[0] = "~/art/textures/door2_full_normal";
+   specularMap[0] = "~/art/textures/door2_full_spec";
+
+   specular[0] = "0.9 0.9 0.9 1";
+   specularPower[0] = 10;
+
+   doubleSided = false;
+   translucent = false;
+   translucentBlendOp = "None";
+};
+
+singleton Material(door1)
+{
+   mapTo = "door1";
+
+   diffuseMap[0] = "~/art/textures/door2_full_color";
+   normalMap[0] = "~/art/textures/door2_full_normal";
+   specularMap[0] = "~/art/textures/door2_full_spec";
+
+   specular[0] = "0.9 0.9 0.9 1";
+   specularPower[0] = 10;
+
+   doubleSided = false;
+   translucent = false;
+   translucentBlendOp = "None";
+};
+
+singleton Material(circle0)
+{
+   mapTo = "circle0";
+
+   diffuseMap[0] = "~/art/textures/circle_color";
+   normalMap[0] = "~/art/textures/circle_normal";
+   specularMap[0] = "~/art/textures/circle_spec";
+
+   specular[0] = "0.9 0.9 0.9 1";
+   specularPower[0] = 10;
+
+   doubleSided = false;
+   translucent = false;
+   translucentBlendOp = "None";
+};
+
+singleton Material(circle1)
+{
+   mapTo = "circle1";
+
+   diffuseMap[0] = "~/art/textures/circle_color";
+   normalMap[0] = "~/art/textures/circle_normal";
+   specularMap[0] = "~/art/textures/circle_spec";
 
    specular[0] = "0.9 0.9 0.9 1";
    specularPower[0] = 10;

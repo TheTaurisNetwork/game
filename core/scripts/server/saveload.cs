@@ -5,29 +5,7 @@
 
 //-----------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
-//       Loading
-//-----------------------------------------------------------------------------
 
-function loadingGroup::onAdd(%this)
-{
- error("LOADING");
-
-}
-
-//-----------------------------------------------------------------------------
-
-function loadingGroup::load(%this)
-{
- %ship = %this.getObject(0);
- if (%ship.loading $= "1")
- {
-   game.loadShip(%ship);
- 
-   %ship.loading = "";
- }
- %this.delete();
-}
 
 //-----------------------------------------------------------------------------
 //       Loading
@@ -60,30 +38,18 @@ function saveClientShip(%client, %name)
 
 function saveShip(%ship, %name)
 {
-  new SimGroup(tempGroup)
-  {
-    class = "loadingGroup";
-  };
-  tempGroup.add( %ship );
-  
-  %GO = %ship.getGameObject();
-  missionCleanup.add(%GO);
-
   %ship.nameBase = %name;
   %ship.loading = true;
   
   new FileObject("File");
   File.openForWrite("core/ships/"@%name@".cs");
-  File.writeObject(tempGroup);
-  File.writeLine("tempGroup.load();");
+  File.writeLine("%ship = ");
+  File.writeObject(%ship);
+  File.writeLine("%ship.onLoaded();");
   File.close();
   File.delete();
 
   %ship.loading = "";
-  %ship.add(%GO);
-  buildGroup.add(%ship);
-
-  tempGroup.delete();
 
   return true;
 }

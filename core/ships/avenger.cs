@@ -1,10 +1,5 @@
 
-new SimGroup(tempGroup) {
-   class = "loadingGroup";
-   canSave = "1";
-   canSaveDynamicFields = "1";
-
-   new SimGroup() {
+%ship =  new SimGroup() {
       class = "ShipGroup";
       canSave = "1";
       canSaveDynamicFields = "1";
@@ -214,6 +209,5 @@ new SimGroup(tempGroup) {
             canSaveDynamicFields = "1";
          };
       };
-   };
 };
-tempGroup.load();
+%ship.onLoaded();
