@@ -94,7 +94,9 @@ function Console::onDisabled(%data, %this)
   }
   else if (%data.getName() $= "HelmConsole")
     %this.actuated = false;
-  
+  else if (%data.getName() $= "DoorSwitch")
+    %this.actuated = false;
+
   Asset::onDisabled(%data, %this);
 }
 

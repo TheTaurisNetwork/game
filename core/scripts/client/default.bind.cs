@@ -596,15 +596,15 @@ function toggleFlashlight(%val)
 
 //------------------------------------------------------------------------------
 
-moveMap.bind(keyboard, "1", weaponSlot, 0);
-moveMap.bind(keyboard, "2", weaponSlot, 1);
+//moveMap.bind(keyboard, "1", weaponSlot, 0);
+//moveMap.bind(keyboard, "2", weaponSlot, 1);
 //moveMap.bind(keyboard, "3", weaponSlot, 2);
 //moveMap.bind(keyboard, "4", weaponSlot, 3);
 //moveMap.bind(keyboard, "5", weaponSlot, 4);
 
 moveMap.bind(keyboard, "q", mediPack);
-moveMap.bind(keyboard, "r", weaponSlot, "hp");
-moveMap.bind(keyboard, "g", weaponSlot, "nade");
+//moveMap.bind(keyboard, "r", weaponSlot, "hp");
+//moveMap.bind(keyboard, "g", weaponSlot, "nade");
 moveMap.bind(keyboard, "l", toggleFlashlight);
 
 //------------------------------------------------------------------------------

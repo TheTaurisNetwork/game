@@ -54,7 +54,7 @@ function Armor::onTrigger(%data, %player, %trig, %val)
 
 function Armor::onAdd(%data, %player)
 {
-  %player.updateGravity();
+  %player.setGravity(0);
   %player.checkIfInside();
 }
 
@@ -69,40 +69,10 @@ function Armor::onHyperJump(%data, %player)
 
 function ShapeBase::applyGravity(%this, %g)
 {
-  %this.field.fieldOn(%g);
-}
-
-function ShapeBase::updateGravity(%this)
-{
-  if (%this.getDamageState() $= "Destroyed")
-  {
-    %this.field.delete();
-    return;
-  }
-
-  if (!isObject(%this.field))
-  {
-    %this.field = new PhysicalZone()
-    {
-       gravityMod = "0";
-       polyhedron = "-0.5000000 0.5000000 0.0000000 1.0000000 0.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 0.0000000 1.0000000";
-       scale = "1 1 2";
-    };
-  }
-
-  %this.field.setPosition(%this.getPosition());
-  %this.schedule(50, updateGravity);
-}
-
-//-----------------------------------------------------------------------------
-
-function PhysicalZone::fieldOn(%this, %bool)
-{
-  %this.activeState = %bool;
-  if (%bool)
-    %this.activate();
+  if (%g)
+    %this.setGravity(-20);
   else
-    %this.deactivate();
+    %this.setGravity(0);
 }
 
 //-----------------------------------------------------------------------------

@@ -98,23 +98,17 @@ function startTrigger(%up)
 function elevatorTrigger::onEnterTrigger(%this,%trigger,%obj)
 {
   if (%trigger.up)
-    %mod = -1;
+    %obj.setGravity( 20 );
+
   else
-    %mod = 0.5;
-
-  //warn("enter" SPC %mod);
-
-  %obj.field.gravityMod = %mod;
-  %obj.field.activate();
+    %obj.setGravity( -10 );
 }
 
 //-----------------------------------------------------------------------------
 
 function elevatorTrigger::onLeaveTrigger(%this,%trigger,%obj)
 {
-  //warn("leave");
-  %obj.field.gravityMod = 0;
-  %obj.field.fieldOn(%obj.field.activeState);
+  %obj.setGravity( 0 );
 }
 
 //-----------------------------------------------------------------------------
