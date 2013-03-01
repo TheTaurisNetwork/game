@@ -23,7 +23,7 @@ function ShapeBase::interactLoop(%this)
     return;
   }
 
-  if (%obj.className() $= "Door" || %obj.className() $= "Console" || %obj.className() $= "Generator" || %obj.className() $= "Drive" || %obj.className() $= "Station")
+  if (%obj.className() $= "Console" || %obj.className() $= "Generator" || %obj.className() $= "Drive" || %obj.className() $= "Station")
   {
       if (%this.interactObj != %obj)
         commandtoClient(%this.client, 'playerCanInteract', 1);
@@ -55,7 +55,7 @@ function Armor::onTrigger(%data, %player, %trig, %val)
 function Armor::onAdd(%data, %player)
 {
   %player.setGravity(0);
-  %player.checkIfInside();
+  %player.checkIfInside(1);
 }
 
 //-----------------------------------------------------------------------------
@@ -98,7 +98,7 @@ function ShapeBase::checkIfInside(%this, %last)
   if (%last != %state)
     %this.applyGravity(%state);
 
-  %this.schedule(500, checkIfInside, %state);
+  %this.InteriorLoop = %this.schedule(500, checkIfInside, %state);
 }
 
 //-----------------------------------------------------------------------------

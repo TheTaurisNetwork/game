@@ -23,6 +23,9 @@ function serverCmdprogramObject(%client)
          case "Console":
            CommandtoClient(%client, 'pushGui', "prgConsoleDlg");
 
+         case "DoorSwitch":
+           CommandtoClient(%client, 'pushGui', "prgDoorCtrlDlg");
+
          default:
 
            if (%db !$= "Generator")
@@ -73,7 +76,7 @@ function serverCmdinteractObject(%client)
 
 function serverCmdrequestDataforGui(%client, %id, %dlg, %func, %var1)
 {
-
+  error(%dlg);
   switch$(%dlg)
   {
       case "prgConsoleDlg":
@@ -114,6 +117,29 @@ function serverCmdrequestDataforGui(%client, %id, %dlg, %func, %var1)
             }
           }
           
+      case "prgDoorCtrlDlg":
+          %obj = %client.player.interactObj;
+          if (%obj)
+          {
+
+            %client.programmingObject = %obj;
+            %ship = %client.getBuildingGroup();
+            if (%ship)
+            {
+              %pGroup = %ship.getAssetGroup();
+              for (%i = 0; %i < %pGroup.getCount(); %i++)
+              {
+                 %test = %pGroup.getObject(%i);
+                 if (%test.getDatablockName() $= "Door")
+                   %arg2 = trim(%arg2 SPC %test);
+              }
+
+              %arg3 = %obj.pwrBranch;
+              %arg1 = %pGroup.branch[max];
+              %arg4 = %obj.door ? %obj.door : false;
+            }
+          }
+
       case "prgPowerDlg":
         %ship = %client.getBuildingGroup();
         if (%ship)
@@ -228,7 +254,6 @@ function serverCmdrequestDataforGui(%client, %id, %dlg, %func, %var1)
 
             %arg5 = %aGroup.gravityBranch;
             %arg7 = 0;
-//            %arg7 = 50;
           }
   }
 
@@ -374,7 +399,15 @@ function serverCmdreceiveUploadDataStream(%client, %id, %dlg, %arg1, %arg2, %arg
           }
           serverCmdrequestDataforGui(%client, %id, %dlg);
 
+      case "prgDoorCtrlDlg":
 
+          %obj = %player.interactObj;
+          if (isObject(%obj))
+            %obj.setPwrBranch(%arg1);
+          if (isObject(%arg2))
+            %obj.door = %arg2;
+          echo(%arg1);
+          echo(%arg2);
   }
 }
 

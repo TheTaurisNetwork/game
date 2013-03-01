@@ -100,7 +100,7 @@ function spawnTSStaticShape(%data, %bool, %isHull)
 
   %r = new TSStatic()
   {
-      shapeFile = "~/art/shapes/"@%data;
+      shapeName = "core/art/shapes/"@%data;
 
       collisionType = %col;
       decalType = %col;

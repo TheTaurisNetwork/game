@@ -102,6 +102,8 @@ function elevatorTrigger::onEnterTrigger(%this,%trigger,%obj)
 
   else
     %obj.setGravity( -10 );
+
+  cancel(%obj.InteriorLoop);
 }
 
 //-----------------------------------------------------------------------------
@@ -109,6 +111,8 @@ function elevatorTrigger::onEnterTrigger(%this,%trigger,%obj)
 function elevatorTrigger::onLeaveTrigger(%this,%trigger,%obj)
 {
   %obj.setGravity( 0 );
+
+  %obj.checkIfInside();
 }
 
 //-----------------------------------------------------------------------------

@@ -116,7 +116,7 @@ function Console::actuate(%data, %this)
 {
   if (!%this.isEnabled())
     return false;
-
+  echo(%data.getname());
   if (%data.getName() $= "Console")
   {
     %pG = %this.getGroup();
@@ -146,6 +146,12 @@ function Console::actuate(%data, %this)
     %g = %this.getGroup();
     if (%g.getGroup().getGameObject().jumpSeq == 0)
       %g-->HyperDrive.getDatablock().onInteract(%g-->HyperDrive);
+  }
+  else if (%data.getName() $= "DoorSwitch")
+  {
+    %door = %this.door;
+    if (%door)
+      %door.getDatablock().onInteract(%door);
   }
   return true;
 }

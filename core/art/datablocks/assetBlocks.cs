@@ -37,6 +37,12 @@ datablock staticShapeData(HelmConsole : Console)
 
 //-----------------------------------------------------------------------------
 
+datablock staticShapeData(DoorSwitch : Console)
+{
+   shapeFile = "core/art/shapes/cube.dae";
+
+   pwrRequired = 10;
+};
 
 //-----------------------------------------------------------------------------
 //     Hyper Drive types

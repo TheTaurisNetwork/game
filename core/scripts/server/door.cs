@@ -17,8 +17,8 @@ function Door::setUp(%data, %this, %player)
 {
   %this.actuated = false;
 
-  %this.colMesh = spawnTSStaticShape("doorCol.dae", 0);
-  %this.colMesh.getTransform(%this.getTransform());
+  %this.colMesh = spawnTSStaticShape("doorCol.dae", 1);
+  %this.colMesh.setTransform(%this.getTransform());
   %this.getGroup().getGroup().getPieceGroup().add(%this.colMesh);
 
   return %this.setPwrBranch( %this.pwrBranch );

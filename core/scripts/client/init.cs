@@ -83,7 +83,8 @@ function initClient()
    exec("~/art/gui/prgAssetPowerDlg.gui");
    exec("~/art/gui/inventoryDlg.gui");
    exec("~/art/gui/shipDataDlg.gui");
-
+   exec("~/art/gui/prgDoorCtrlDlg.gui");
+   
    // Gui scripts
    exec("~/scripts/gui/help.cs");
 
@@ -152,6 +153,7 @@ function execGui()
    exec("~/scripts/gui/prgAssetPowerDlg.cs");
    exec("~/scripts/gui/inventoryDlg.cs");
    exec("~/scripts/gui/shipDataDlg.cs");
+   exec("~/scripts/gui/prgDoorCtrlDlg.cs");
 }
 
 //-----------------------------------------------------------------------------

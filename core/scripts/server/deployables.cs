@@ -43,10 +43,12 @@ $dep[15] = "downElevator";
 $dep[15, c] = "0";
 $dep[16] = "doorframe0.dae";
 $dep[16, c] = "1";
-$dep[17] = "door";
+$dep[17] = "Door";
 $dep[17, c] = "0";
+$dep[18] = "doorSwitch";
+$dep[18, c] = "0";
 
-$dep[max] = 18;
+$dep[max] = 19;
 
 $nameToInv["Block1"] = "Block";
 $nameToInv["GeneratorStandard"] = "Standard Generator";
@@ -66,6 +68,7 @@ $nameToInv["Lights"] = "Interior Lighting";
 $nameToInv["upElevator"] = "Up Elevator";
 $nameToInv["downElevator"] = "Down Elevator";
 $nameToInv["door"] = "Door";
+$nameToInv["doorSwitch"] = "Door Control";
 
 //-----------------------------------------------------------------------------
 //  Shapebase functions

@@ -4,29 +4,29 @@
 
 
 //-----------------------------------------------------------------------------
-// insGeneratorDlg
+// prgDoorCtrlDlg
 //-----------------------------------------------------------------------------
 
-function insGeneratorDlg::onWake(%this)
+function prgDoorCtrlDlg::onWake(%this)
 {
   %this.awake = true;
 }
 
-function insGeneratorDlg::onSleep(%this)
+function prgDoorCtrlDlg::onSleep(%this)
 {
   %this.awake = "";
 }
 
 //-----------------------------------------------------------------------------
 
-function insGeneratorDlg::getDatastream(%this, %arg1, %arg2, %arg3)
+function prgDoorCtrlDlg::getDatastream(%this, %arg1, %arg2, %arg3)
 {
 
 }
 
 //-----------------------------------------------------------------------------
 
-function insGeneratorDlg::toggle(%this)
+function prgDoorCtrlDlg::toggle(%this)
 {
 
 }
