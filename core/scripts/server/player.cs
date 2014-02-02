@@ -95,6 +95,9 @@ function ShapeBase::checkIfInside(%this, %last)
         %state = false;
   }
 
+  if (%down.internalName == "Exterior")
+    %state = false;
+
   if (%last != %state)
     %this.applyGravity(%state);
 

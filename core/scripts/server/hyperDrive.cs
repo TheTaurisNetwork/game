@@ -26,7 +26,9 @@ function Drive::setUp(%data, %this, %player)
 
   %this.setPwrBranch( %this.pwrBranch );
 
-  %this.setRechargeRate( %data.rechargeRate );
+  %this.setRechargeRate(%data.rechargeRate);
+  %this.setEnergyLevel(%data.MaxEnergy);
+  %this.setRepairRate(0);
 
   return %ShipObject.calcHDfieldExtent();
 }

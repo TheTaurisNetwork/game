@@ -18,9 +18,11 @@ exec("./particles.cs");
 exec("./lights.cs");
 exec("./triggers.cs");
 
-exec("./tools.cs");
-exec("./player.cs");
+exec("./hovervehicle.cs");
+//exec("./tools.cs");
+//exec("./player.cs");
 exec("./buildingBlocks.cs");
-exec("./powerBlocks.cs");
-exec("./assetBlocks.cs");
+//exec("./powerBlocks.cs");
+//exec("./assetBlocks.cs");
+//exec("./turret.cs");
 

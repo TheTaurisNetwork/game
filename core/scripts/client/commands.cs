@@ -78,7 +78,21 @@ function clientCmdguiDatastream(%gui, %arg1, %arg2, %arg3, %arg4, %arg5, %arg6, 
 
 //-----------------------------------------------------------------------------
 
+function turretMountCallback(%turret, %player, %mounted)
+{
+   echo ( "\c4turretMountCallback -> " @ %mounted );
 
+   if (%mounted)
+   {
+      // Push the action map
+      turretMap.push();
+   }
+   else
+   {
+      // Pop the action map
+      turretMap.pop();
+   }
+}
 
 
 

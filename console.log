@@ -1,7 +1,7 @@
-//-------------------------- 2/28/2013 -- 19:25:44 -----
+//-------------------------- 2/1/2014 -- 19:56:04 -----
 Warning: forcing the Torque profiler thread to run only on cpu 1.
 Processor Init:
-   Intel Pentium III Xeon, ~3.11 Ghz
+   Intel Pentium III Xeon, ~3.19 Ghz
    FPU detected
    MMX detected
    SSE detected
@@ -24,6 +24,7 @@ Input Init:
 Done
 GFX Init:
    Direct 3D (version 9.x) device found
+   Direct 3D (version 9.x) device found
    Null device found
 
 DebugDrawer Enabled!
@@ -33,7 +34,6 @@ Executing core/main.cs.
 Executing tools/main.cs.
  % - Initializing Core
 Executing core/art/gui/profiles.cs.
-Executing core/scripts/gui/cursors.cs.
 Binding server port to default IP
 UDP initialized on port 0
 Executing core/scripts/client/audio.cs.
@@ -166,9 +166,9 @@ Accepted Mode:
 --Refresh Rate : 60
 --FSAA Level : 4
 --------------
-GFXPCD3D9Device::reset - depthstencil 366760 has 2 ref's
+GFXPCD3D9Device::reset - depthstencil 3e69e0 has 2 ref's
 --- Resetting D3D Device ---
-GFXPCD3D9Device::reset - depthstencil 51204c0 has 2 ref's
+GFXPCD3D9Device::reset - depthstencil 3e68a0 has 2 ref's
 --- Resetting D3D Device ---
 Executing core/art/gui/remapDlg.gui.
 Executing core/art/gui/console.gui.
@@ -191,6 +191,7 @@ Executing core/art/gui/prgAssetPowerDlg.gui.
 Executing core/art/gui/inventoryDlg.gui.
 Executing core/art/gui/shipDataDlg.gui.
 Executing core/art/gui/prgDoorCtrlDlg.gui.
+Executing core/art/gui/prgFireCtrlDlg.gui.
 Executing core/scripts/gui/help.cs.
 Executing core/scripts/gui/guiTreeViewCtrl.cs.
 Executing core/scripts/gui/messageBoxes/messageBox.ed.cs.
@@ -216,13 +217,15 @@ Executing core/scripts/gui/textSwapperDlg.cs.
 Executing core/scripts/gui/prgAssetPowerDlg.cs.
 Executing core/scripts/gui/inventoryDlg.cs.
 Executing core/scripts/gui/shipDataDlg.cs.
-Missing file: core/scripts/gui/prgDoorCtrlDlg.cs!
+Executing core/scripts/gui/prgDoorCtrlDlg.cs.
+Executing core/scripts/gui/prgFireCtrlDlg.cs.
 Executing core/scripts/client/default.bind.cs.
 Binding server port to default IP
 UDP initialized on port 0
 Core Initialized - %
  % - Initializing Tools
 Executing tools/gui/cursors.ed.cs.
+tools/gui/cursors.ed.cs (51): Cannot re-declare object [MoveCursor].
 Executing tools/gui/profiles.ed.cs.
 Executing tools/editorClasses/gui/panels/navPanelProfiles.ed.cs.
 Executing tools/gui/guiDialogs.ed.cs.
@@ -421,7 +424,7 @@ Executing tools/shapeEditor/scripts/shapeEditorHints.ed.cs.
 Executing tools/shapeEditor/scripts/shapeEditorActions.ed.cs.
 
 Engine initialized...
-Started up in 4.36 seconds...
+Started up in 4.21 seconds...
 Window focus status changed: focus: 1
 AntiAliasing has been disabled; it is not compatible with AdvancedLighting.
 core/scripts/server/server.cs (139): Unable to find function endMission
@@ -430,12 +433,13 @@ Executing core/scripts/server/functionLib.cs.
 Executing core/scripts/server/audio.cs.
 Executing core/scripts/server/message.cs.
 Executing core/scripts/server/commands.cs.
-core/scripts/server/commands.cs (380): string always evaluates to 0.
+core/scripts/server/commands.cs (381): string always evaluates to 0.
 Executing core/scripts/server/levelInfo.cs.
 Executing core/scripts/server/missionLoad.cs.
 Executing core/scripts/server/missionDownload.cs.
 Executing core/scripts/server/clientConnection.cs.
 Executing core/scripts/server/player.cs.
+core/scripts/server/player.cs (98): string always evaluates to 0.
 Executing core/scripts/server/staticShape.cs.
 Executing core/scripts/server/item.cs.
 Executing core/scripts/server/weapon.cs.
@@ -444,7 +448,7 @@ Executing core/scripts/server/spawn.cs.
 Executing core/scripts/server/camera.cs.
 Executing core/scripts/server/centerPrint.cs.
 Executing core/scripts/server/commands.cs.
-core/scripts/server/commands.cs (380): string always evaluates to 0.
+core/scripts/server/commands.cs (381): string always evaluates to 0.
 Executing core/scripts/server/inventory.cs.
 Executing core/scripts/server/TSNodes.cs.
 core/scripts/server/TSNodes.cs (0): Unable to find object: 'MissionCleanup' attempting to call function 'add'
@@ -459,10 +463,14 @@ Executing core/scripts/server/station.cs.
 Executing core/scripts/server/lighting.cs.
 Executing core/scripts/server/elevator.cs.
 Executing core/scripts/server/door.cs.
+Executing core/scripts/server/turret.cs.
 Executing core/scripts/server/shipGroup.cs.
 Executing core/scripts/server/shipObject.cs.
 Executing core/scripts/server/powerGroup.cs.
 Executing core/scripts/server/pieceGroup.cs.
+Starting multiplayer mode
+Binding server port to default IP
+UDP initialized on port 28000
 Executing core/art/datablocks/datablockExec.cs.
 Executing core/art/datablocks/camera.cs.
 Executing core/art/datablocks/markers.cs.
@@ -474,39 +482,8 @@ ParticleData - ElevatorDown(12) - invalid value for dragCoefficient: Must be bet
 ParticleEmitterData(ElevatorDownEmitter) velocityVariance > ejectionVelocity
 Executing core/art/datablocks/lights.cs.
 Executing core/art/datablocks/triggers.cs.
-Executing core/art/datablocks/tools.cs.
-Executing core/art/shapes/rifle/TP_Lurker.cs.
-Loaded cached Collada shape from core/art/shapes/rifle/TP_Lurker.cached.dts
-ShapeBaseImageData:: Could not resolve state "NoAmmo" for image "textureGunImage"
-Executing core/art/shapes/rifle/FP_Lurker.cs.
-Loaded cached Collada shape from core/art/shapes/rifle/FP_Lurker.cached.dts
-Executing core/art/datablocks/player.cs.
-Loading SFX: core/art/sound/death (2 channels, 22 kHz, 0.10 sec, 8 kb)
-SFXProfile(DeathCrySound)::onAdd: The preload failed!
-Loading SFX: core/art/sound/pain (2 channels, 22 kHz, 0.10 sec, 8 kb)
-SFXProfile(PainCrySound)::onAdd: The preload failed!
-Loading SFX: core/art/sound/lgtStep_mono_01 (2 channels, 22 kHz, 0.10 sec, 8 kb)
-SFXProfile(FootLightSoftSound)::onAdd: The preload failed!
-Loading SFX: core/art/sound/hvystep_ mono_01 (2 channels, 22 kHz, 0.10 sec, 8 kb)
-SFXProfile(FootLightHardSound)::onAdd: The preload failed!
-Loading SFX: core/art/sound/metalstep_mono_01 (2 channels, 22 kHz, 0.10 sec, 8 kb)
-SFXProfile(FootLightMetalSound)::onAdd: The preload failed!
-ParticleData(LightPuff) times[2] < times[1]
-Executing core/art/shapes/Soldier/soldier_rigged.cs.
-Loaded cached Collada shape from core/art/shapes/Soldier/soldier_rigged.cached.dts
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'side_right'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'sprint_right'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'crouch_right'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'prone_root'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'prone_forward'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'prone_backward'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'swim_root'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'swim_forward'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'swim_backward'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'swim_left'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'swim_right'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'standjump'!
-core/art/datablocks/player.cs (0): Unable to find parent object LightMale for PlayerData.
+Executing core/art/datablocks/hovervehicle.cs.
+Validation required for shape: core/art/shapes/toonsGlider/toonGlider.dts
 Executing core/art/datablocks/buildingBlocks.cs.
 Executing core/art/shapes/cube.cs.
 Loaded cached Collada shape from core/art/shapes/cube.cached.dts
@@ -520,40 +497,21 @@ Loaded cached Collada shape from core/art/shapes/cube3.cached.dts
 Executing core/art/shapes/cube4.cs.
 Loaded cached Collada shape from core/art/shapes/cube4.cached.dts
 Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
-Executing core/art/datablocks/powerBlocks.cs.
-Executing core/art/shapes/generator.cs.
-Loaded cached Collada shape from core/art/shapes/generator.cached.dts
-TSShape::addNode: ColBox-1 already exists!
-Warning: shape core/art/shapes/generator.dae collision detail 0 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/generator.dae collision detail 0 (Collision-1) bounds exceed that of shape.
-Executing core/art/datablocks/assetBlocks.cs.
-Error: cannot change namespace parent linkage of Console from StaticShapeData to Console.
-Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
-Error: cannot change namespace parent linkage of lights from StaticShapeData to lights.
-Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/cube.dae collision detail 0 (Collision-1) bounds exceed that of shape.
-Loaded cached Collada shape from core/art/shapes/elevatorPad.cached.dts
-Error: cannot change namespace parent linkage of door from StaticShapeData to door.
-Executing core/art/shapes/door0.cs.
-Loaded cached Collada shape from core/art/shapes/door0.cached.dts
 *** LOADING MISSION: core/levels/Empty Room.mis
 *** Stage 1 load
+Error: cannot change namespace parent linkage of DefaultGame from ScriptObject to DefaultGame.
 *** Stage 2 load
 Executing core/levels/Empty Room.mis.
 *** Mission loaded
 Connect request from: 
-Connection established 3972
-CADD: 3973 local
+Connection established 3975
+CADD: 3976 local
 *** Sending mission load to client: core/levels/Empty Room.mis
 Mapping string: ServerMessage to index: 0
 Mapping string: MsgConnectionError to index: 1
 Mapping string: MsgLoadInfo to index: 2
 Mapping string: MsgLoadDescripition to index: 3
+Sending heartbeat to master server [IP:198.101.240.242:28002]
 Mapping string: MsgLoadInfoDone to index: 4
 Mapping string: MsgClientJoin to index: 5
 Mapping string: Welcome to Tauris, %1. to index: 6
@@ -566,29 +524,7 @@ Executing core/scripts/client/postFx/default.postfxpreset.cs.
 % - PostFX Manager - Applying from preset
 % - PostFX Manager - PostFX enabled
 Mapping string: MissionStartPhase1Ack to index: 0
-[MaterialList::mapMaterials] Unable to find material for texture: base.lmale
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'side_right'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'sprint_right'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'crouch_right'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'prone_root'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'prone_forward'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'prone_backward'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'swim_root'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'swim_forward'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'swim_backward'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'swim_left'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'swim_right'!
-c:\torque\engine\source\t3d\player.cpp(496) : Warning - PlayerData::preload - Unable to find named animation sequence 'standjump'!
-Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/generator.dae collision detail 1 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/generator.dae collision detail 1 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
-Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
+Validation required for shape: core/art/shapes/toonsGlider/toonGlider.dts
 Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
 Warning: shape core/art/shapes/cube.dae collision detail 1 (Collision-1) bounds exceed that of shape.
 Mapping string: receiveItemList to index: 9
@@ -611,560 +547,77 @@ fxFoliageReplicator - replicated client foliage for 0 objects
 *** Phase 3: Mission Lighting
 Mission lighting done
 Mapping string: MissionStartPhase3Ack to index: 4
-core/scripts/server/inventory.cs (276): Unable to find object: 'rifle' attempting to call function 'onInventory'
-core/scripts/server/inventory.cs (276): Unable to find object: 'pistol' attempting to call function 'onInventory'
-core/scripts/server/inventory.cs (276): Unable to find object: 'pistolammo' attempting to call function 'onInventory'
-core/scripts/server/inventory.cs (276): Unable to find object: 'nade' attempting to call function 'onInventory'
-core/scripts/server/inventory.cs (276): Unable to find object: 'ammopack' attempting to call function 'onInventory'
+core/scripts/server/defaultGame.cs (81): Unable to find function pickCameraSpawnPoint
+3985
 Mapping string: MissionStart to index: 14
+[MaterialList::mapMaterials] Creating missing material for texture: core/art/shapes/toonsGlider/paper
+[MaterialList::mapMaterials] Unable to find material for texture: cubeText
 *** Initial Control Object
 Activating DirectInput...
 *** Control Object Changed
-==>loadAv();
-Executing core/ships/avenger.cs.
-Loaded cached Collada shape from core/art/shapes/corridor_small5.cached.dts
-Loaded cached Collada shape from core/art/shapes/elevator_small0.cached.dts
-Loaded cached Collada shape from core/art/shapes/ship0.cached.dts
-Loaded cached Collada shape from core/art/shapes/corridor_small0.cached.dts
-Loaded cached Collada shape from core/art/shapes/corridor_small2.cached.dts
-Loaded cached Collada shape from core/art/shapes/room_engine0.cached.dts
-Loaded cached Collada shape from core/art/shapes/corridor_small4.cached.dts
-3989
-Ship avenger loaded.
-[MaterialList::mapMaterials] Unable to find material for texture: cor_roof
-[MaterialList::mapMaterials] Unable to find material for texture: cor_roof
-[MaterialList::mapMaterials] Unable to find material for texture: cor_roof
-[MaterialList::mapMaterials] Unable to find material for texture: cor_roof
-[MaterialList::mapMaterials] Unable to find material for texture: cor_roof
-[MaterialList::mapMaterials] Unable to find material for texture: cor_roof
-client is backlogged, time is frozen
-client is no longer backlogged, time is unfrozen (30 ms elapsed)
-Mapping string: dropCameraAtPlayer to index: 5
-*** Control Object Changed
-Mapping string: DropPlayerAtCamera to index: 6
-*** Control Object Changed
-*** Control Object Changed
-*** Control Object Changed
-*** Control Object Changed
-*** Control Object Changed
-*** Control Object Changed
-*** Control Object Changed
-Mapping string: requestDataforGui to index: 7
-shipDataDlg
-Mapping string: guiDatastream to index: 15
-Mapping string: receiveUploadDataStream to index: 8
-shipDataDlg
-shipDataDlg
-GeneratorStandard
-[MaterialList::mapMaterials] Unable to find material for texture: genArmMat
-[MaterialList::mapMaterials] Unable to find material for texture: genMat
-GeneratorStandard::onDisabled(%data, %this)
-4016
-StaticShape
-GeneratorStandard::onEnabled(%data, %this)
-Mapping string: playerCanInteract to index: 16
-Mapping string: interactObject to index: 9
-core/scripts/server/deployables.cs (82): Unable to find object: 'doorframe0.dae' attempting to call function 'getName'
-
-core/scripts/server/deployables.cs (84): Unable to find object: 'doorframe0.dae' attempting to call function 'getClassName'
-Loaded cached Collada shape from core/art/shapes/doorframe0.cached.dts
-[MaterialList::mapMaterials] Unable to find material for texture: basemetal0
-door
-4029
-StaticShape
-Loaded cached Collada shape from core/art/shapes/doorCol.cached.dts
-DoorSwitch
-[MaterialList::mapMaterials] Unable to find material for texture: cubeText
-4033
-StaticShape
-DoorSwitch::onDisabled(%data, %this)
-DoorSwitch::onEnabled(%data, %this)
-Mapping string: programObject to index: 10
-Mapping string: pushGui to index: 17
+Mapping string: setZoomLvl to index: 5
+Mapping string: objectSelected to index: 6
+onSelect hvehicle
+>half
+>half
+>half
+maxed
+>half
+maxed
+>half
+maxed
+>half
+maxed
+>half
+maxed
+>half
+maxed
+>half
+maxed
+>half
+maxed
+>half
+maxed
+>half
+maxed
+>half
+>half
+>half
+minned
+minned
+minned
+minned
+minned
+minned
+minned
+minned
+minned
+minned
+minned
+onSelect hvehicle
+onSelect hvehicle
+onSelect hvehicle
+onSelect hvehicle
+onSelect hvehicle
+onSelect hvehicle
+Mapping string: objectDeselected to index: 7
+onDeselect hvehicle
+Received info request from a master server [IP:198.101.240.242:28002].
+onSelect hvehicle
+onDeselect hvehicle
+core/scripts/server/commands.cs (32): Unknown command onSelect.
+  Object Block(32) Block -> Piece -> StaticShapeData -> ShapeBaseData -> GameBaseData -> SimDataBlock -> SimObject
+core/scripts/server/commands.cs (40): Unknown command onDeselect.
+  Object Block(32) Block -> Piece -> StaticShapeData -> ShapeBaseData -> GameBaseData -> SimDataBlock -> SimObject
+onSelect hvehicle
+onDeselect hvehicle
 Window focus status changed: focus: 0
   Using background sleep time: 200
 DirectInput deactivated.
 Activating DirectInput...
 Window focus status changed: focus: 1
-==>execGui();
-Executing core/scripts/gui/guiTreeViewCtrl.cs.
-Executing core/scripts/gui/messageBoxes/messageBox.ed.cs.
-Executing core/scripts/gui/messageBoxes/messageBoxOk.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxYesNo.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxYesNoCancel.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxOKCancel.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxOKCancelDetailsDlg.ed.gui.
-Executing core/scripts/gui/messageBoxes/messagePopup.ed.gui.
-Executing core/scripts/gui/messageBoxes/IODropdownDlg.ed.gui.
-Executing core/scripts/gui/chatHud.cs.
-core/scripts/gui/chatHud.cs (96): Cannot re-declare object [HudMessageVector].
-Executing core/scripts/gui/playGui.cs.
-Executing core/scripts/gui/startupGui.cs.
-Executing core/scripts/gui/chooseLevelDlg.cs.
-Executing core/scripts/gui/optionsDlg.cs.
-Executing core/scripts/gui/loadingGui.cs.
-Executing core/scripts/gui/prgConsoleDlg.cs.
-Executing core/scripts/gui/insHelmConsoleDlg.cs.
-Executing core/scripts/gui/prgPowerDlg.cs.
-Executing core/scripts/gui/spawnerDlg.cs.
-Executing core/scripts/gui/insGeneratorDlg.cs.
-Executing core/scripts/gui/textSwapperDlg.cs.
-Executing core/scripts/gui/prgAssetPowerDlg.cs.
-Executing core/scripts/gui/inventoryDlg.cs.
-Executing core/scripts/gui/shipDataDlg.cs.
-Executing core/scripts/gui/prgDoorCtrlDlg.cs.
-ello
-prgDoorCtrlDlg
-4033
-4029
-core/scripts/client/commands.cs (74): Unknown command getDatastream.
-  Object prgDoorCtrlDlg(1928) prgDoorCtrlDlg -> GuiControl -> SimGroup -> SimSet -> SimObject
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-==>execGui();
-Executing core/scripts/gui/guiTreeViewCtrl.cs.
-Executing core/scripts/gui/messageBoxes/messageBox.ed.cs.
-Executing core/scripts/gui/messageBoxes/messageBoxOk.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxYesNo.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxYesNoCancel.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxOKCancel.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxOKCancelDetailsDlg.ed.gui.
-Executing core/scripts/gui/messageBoxes/messagePopup.ed.gui.
-Executing core/scripts/gui/messageBoxes/IODropdownDlg.ed.gui.
-Executing core/scripts/gui/chatHud.cs.
-core/scripts/gui/chatHud.cs (96): Cannot re-declare object [HudMessageVector].
-Executing core/scripts/gui/playGui.cs.
-Executing core/scripts/gui/startupGui.cs.
-Executing core/scripts/gui/chooseLevelDlg.cs.
-Executing core/scripts/gui/optionsDlg.cs.
-Executing core/scripts/gui/loadingGui.cs.
-Executing core/scripts/gui/prgConsoleDlg.cs.
-Executing core/scripts/gui/insHelmConsoleDlg.cs.
-Executing core/scripts/gui/prgPowerDlg.cs.
-Executing core/scripts/gui/spawnerDlg.cs.
-Executing core/scripts/gui/insGeneratorDlg.cs.
-Executing core/scripts/gui/textSwapperDlg.cs.
-Executing core/scripts/gui/prgAssetPowerDlg.cs.
-Executing core/scripts/gui/inventoryDlg.cs.
-Executing core/scripts/gui/shipDataDlg.cs.
-Executing core/scripts/gui/prgDoorCtrlDlg.cs.
-ello
-prgDoorCtrlDlg
-4033
-4029
-Executing tools/worldEditor/gui/ToolsPaletteGroups/init.cs.
-Executing tools/worldEditor/gui/ToolsPaletteWindow.ed.gui.
-Executing tools/worldEditor/gui/ToolsPaletteGroups/ConvexEditorPalette.ed.gui.
-Executing tools/worldEditor/gui/ToolsPaletteGroups/DecalEditorPalette.ed.gui.
-Executing tools/worldEditor/gui/ToolsPaletteGroups/ForestEditorPalette.ed.gui.
-Executing tools/worldEditor/gui/ToolsPaletteGroups/MeshRoadEditorPalette.ed.gui.
-Executing tools/worldEditor/gui/ToolsPaletteGroups/RiverEditorPalette.ed.gui.
-Executing tools/worldEditor/gui/ToolsPaletteGroups/RoadEditorPalette.ed.gui.
-Executing tools/worldEditor/gui/ToolsPaletteGroups/ShapeEditorPalette.ed.gui.
-Executing tools/worldEditor/gui/ToolsPaletteGroups/TerrainEditPalette.ed.gui.
-Executing tools/worldEditor/gui/ToolsPaletteGroups/TerrainPainterPalette.ed.gui.
-Executing tools/worldEditor/gui/ToolsPaletteGroups/WorldEditorPalette.ed.gui.
-Executing tools/worldEditor/gui/WorldEditorTreeWindow.ed.gui.
-Executing tools/worldEditor/gui/WorldEditorInspectorWindow.ed.gui.
-Executing tools/worldEditor/gui/WorldEditorToolbar.ed.gui.
-Executing tools/worldEditor/gui/TerrainEditToolbar.ed.gui.
-Executing tools/worldEditor/gui/TerrainPainterWindow.ed.gui.
-Executing tools/worldEditor/gui/guiTerrainMaterialDlg.ed.gui.
-Executing tools/worldEditor/gui/TerrainBrushSoftnessCurveDlg.ed.gui.
-Executing tools/worldEditor/gui/TerrainPainterToolbar.ed.gui.
-Executing tools/worldEditor/gui/ToolsToolbar.ed.gui.
-Executing tools/worldEditor/gui/EditorSettingsWindow.ed.gui.
-Executing tools/worldEditor/scripts/editorSettingsWindow.ed.cs.
-Executing tools/worldEditor/gui/GeneralSettingsTab.ed.gui.
-Executing tools/worldEditor/gui/ObjectEditorSettingsTab.ed.gui.
-Executing tools/worldEditor/gui/AxisGizmoSettingsTab.ed.gui.
-Executing tools/worldEditor/gui/TerrainEditorSettingsTab.ed.gui.
-Executing tools/worldEditor/gui/CameraSettingsTab.ed.gui.
-Executing tools/worldEditor/gui/ObjectSnapOptionsWindow.ed.gui.
-Executing tools/worldEditor/scripts/objectSnapOptions.ed.cs.
-Executing tools/worldEditor/gui/TransformSelectionWindow.ed.gui.
-Executing tools/worldEditor/scripts/transformSelection.ed.cs.
-Executing tools/convexEditor/convexEditorSettingsTab.ed.gui.
-Executing tools/shapeEditor/gui/ShapeEditorSettingsTab.gui.
-Win32Window::WindowProc - resetting device due to window size change.
-GFXPCD3D9Device::reset - depthstencil 5171e80 has 2 ref's
---- Resetting D3D Device ---
-Time spent in toggleEditor() : 0.832 s
-Mapping string: SetEditorCameraPlayer to index: 11
-Mapping string: EditorOrbitCameraSelectChange to index: 12
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-==>execServer();
-Executing core/scripts/server/functionLib.cs.
-Executing core/scripts/server/audio.cs.
-Executing core/scripts/server/message.cs.
-Executing core/scripts/server/commands.cs.
-core/scripts/server/commands.cs (380): string always evaluates to 0.
-Executing core/scripts/server/levelInfo.cs.
-Executing core/scripts/server/missionLoad.cs.
-Executing core/scripts/server/missionDownload.cs.
-Executing core/scripts/server/clientConnection.cs.
-Executing core/scripts/server/player.cs.
-Executing core/scripts/server/staticShape.cs.
-Executing core/scripts/server/item.cs.
-Executing core/scripts/server/weapon.cs.
-Executing core/scripts/server/kickban.cs.
-Executing core/scripts/server/spawn.cs.
-Executing core/scripts/server/camera.cs.
-Executing core/scripts/server/centerPrint.cs.
-Executing core/scripts/server/commands.cs.
-core/scripts/server/commands.cs (380): string always evaluates to 0.
-Executing core/scripts/server/inventory.cs.
-Executing core/scripts/server/TSNodes.cs.
-core/scripts/server/TSNodes.cs (2): Cannot re-declare object [TSStaticNodeMgr].
-Executing core/scripts/server/defaultGame.cs.
-Executing core/scripts/server/buildGame.cs.
-Executing core/scripts/server/battleGame.cs.
-Executing core/scripts/server/saveLoad.cs.
-Executing core/scripts/server/deployables.cs.
-Executing core/scripts/server/console.cs.
-Executing core/scripts/server/hyperDrive.cs.
-Executing core/scripts/server/station.cs.
-Executing core/scripts/server/lighting.cs.
-Executing core/scripts/server/elevator.cs.
-Executing core/scripts/server/door.cs.
-Executing core/scripts/server/shipGroup.cs.
-Executing core/scripts/server/shipObject.cs.
-Executing core/scripts/server/powerGroup.cs.
-Executing core/scripts/server/pieceGroup.cs.
-Win32Window::WindowProc - resetting device due to window size change.
-GFXPCD3D9Device::reset - depthstencil ba01a60 has 2 ref's
---- Resetting D3D Device ---
-ello
-prgDoorCtrlDlg
-4033
-4029
-<input> (0): Unable to find object: 'prgDoorSwitchDlg' attempting to call function 'apply'
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-<input> (0): Unable to find object: 'prgDoorSwitchDlg' attempting to call function 'apply'
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-==>execServer();
-Executing core/scripts/server/functionLib.cs.
-Executing core/scripts/server/audio.cs.
-Executing core/scripts/server/message.cs.
-Executing core/scripts/server/commands.cs.
-core/scripts/server/commands.cs (380): string always evaluates to 0.
-Executing core/scripts/server/levelInfo.cs.
-Executing core/scripts/server/missionLoad.cs.
-Executing core/scripts/server/missionDownload.cs.
-Executing core/scripts/server/clientConnection.cs.
-Executing core/scripts/server/player.cs.
-Executing core/scripts/server/staticShape.cs.
-Executing core/scripts/server/item.cs.
-Executing core/scripts/server/weapon.cs.
-Executing core/scripts/server/kickban.cs.
-Executing core/scripts/server/spawn.cs.
-Executing core/scripts/server/camera.cs.
-Executing core/scripts/server/centerPrint.cs.
-Executing core/scripts/server/commands.cs.
-core/scripts/server/commands.cs (380): string always evaluates to 0.
-Executing core/scripts/server/inventory.cs.
-Executing core/scripts/server/TSNodes.cs.
-core/scripts/server/TSNodes.cs (2): Cannot re-declare object [TSStaticNodeMgr].
-Executing core/scripts/server/defaultGame.cs.
-Executing core/scripts/server/buildGame.cs.
-Executing core/scripts/server/battleGame.cs.
-Executing core/scripts/server/saveLoad.cs.
-Executing core/scripts/server/deployables.cs.
-Executing core/scripts/server/console.cs.
-Executing core/scripts/server/hyperDrive.cs.
-Executing core/scripts/server/station.cs.
-Executing core/scripts/server/lighting.cs.
-Executing core/scripts/server/elevator.cs.
-Executing core/scripts/server/door.cs.
-Executing core/scripts/server/shipGroup.cs.
-Executing core/scripts/server/shipObject.cs.
-Executing core/scripts/server/powerGroup.cs.
-Executing core/scripts/server/pieceGroup.cs.
-<input> (0): Unable to find object: 'prgDoorSwitchDlg' attempting to call function 'apply'
-==>execGui();
-Executing core/scripts/gui/guiTreeViewCtrl.cs.
-Executing core/scripts/gui/messageBoxes/messageBox.ed.cs.
-Executing core/scripts/gui/messageBoxes/messageBoxOk.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxYesNo.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxYesNoCancel.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxOKCancel.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxOKCancelDetailsDlg.ed.gui.
-Executing core/scripts/gui/messageBoxes/messagePopup.ed.gui.
-Executing core/scripts/gui/messageBoxes/IODropdownDlg.ed.gui.
-Executing core/scripts/gui/chatHud.cs.
-core/scripts/gui/chatHud.cs (96): Cannot re-declare object [HudMessageVector].
-Executing core/scripts/gui/playGui.cs.
-Executing core/scripts/gui/startupGui.cs.
-Executing core/scripts/gui/chooseLevelDlg.cs.
-Executing core/scripts/gui/optionsDlg.cs.
-Executing core/scripts/gui/loadingGui.cs.
-Executing core/scripts/gui/prgConsoleDlg.cs.
-Executing core/scripts/gui/insHelmConsoleDlg.cs.
-Executing core/scripts/gui/prgPowerDlg.cs.
-Executing core/scripts/gui/spawnerDlg.cs.
-Executing core/scripts/gui/insGeneratorDlg.cs.
-Executing core/scripts/gui/textSwapperDlg.cs.
-Executing core/scripts/gui/prgAssetPowerDlg.cs.
-Executing core/scripts/gui/inventoryDlg.cs.
-Executing core/scripts/gui/shipDataDlg.cs.
-Executing core/scripts/gui/prgDoorCtrlDlg.cs.
-<input> (0): Unable to find object: 'prgDoorSwitchDlg' attempting to call function 'apply'
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-Win32Window::WindowProc - resetting device due to window size change.
-GFXPCD3D9Device::reset - depthstencil ba01a60 has 2 ref's
---- Resetting D3D Device ---
-ello
-prgDoorCtrlDlg
-4033
-4029
-ello
-Win32Window::WindowProc - resetting device due to window size change.
-GFXPCD3D9Device::reset - depthstencil ba01a60 has 2 ref's
---- Resetting D3D Device ---
-prgDoorCtrlDlg
-4033
-4029
-Win32Window::WindowProc - resetting device due to window size change.
-GFXPCD3D9Device::reset - depthstencil ba01a60 has 2 ref's
---- Resetting D3D Device ---
-ello
-prgDoorCtrlDlg
-4033
-4029
-ello
-prgDoorCtrlDlg
-4033
-4029
-NO GUI : 1928 STREAM : 3 4029 0 0      
-Win32Window::WindowProc - resetting device due to window size change.
-GFXPCD3D9Device::reset - depthstencil ba01a60 has 2 ref's
---- Resetting D3D Device ---
-ello
-prgDoorCtrlDlg
-4033
-4029
-ello
-prgDoorCtrlDlg
-4033
-4029
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-==>execGui();
-Executing core/scripts/gui/guiTreeViewCtrl.cs.
-Executing core/scripts/gui/messageBoxes/messageBox.ed.cs.
-Executing core/scripts/gui/messageBoxes/messageBoxOk.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxYesNo.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxYesNoCancel.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxOKCancel.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxOKCancelDetailsDlg.ed.gui.
-Executing core/scripts/gui/messageBoxes/messagePopup.ed.gui.
-Executing core/scripts/gui/messageBoxes/IODropdownDlg.ed.gui.
-Executing core/scripts/gui/chatHud.cs.
-core/scripts/gui/chatHud.cs (96): Cannot re-declare object [HudMessageVector].
-Executing core/scripts/gui/playGui.cs.
-Executing core/scripts/gui/startupGui.cs.
-Executing core/scripts/gui/chooseLevelDlg.cs.
-Executing core/scripts/gui/optionsDlg.cs.
-Executing core/scripts/gui/loadingGui.cs.
-Executing core/scripts/gui/prgConsoleDlg.cs.
-Executing core/scripts/gui/insHelmConsoleDlg.cs.
-Executing core/scripts/gui/prgPowerDlg.cs.
-Executing core/scripts/gui/spawnerDlg.cs.
-Executing core/scripts/gui/insGeneratorDlg.cs.
-Executing core/scripts/gui/textSwapperDlg.cs.
-Executing core/scripts/gui/prgAssetPowerDlg.cs.
-Executing core/scripts/gui/inventoryDlg.cs.
-Executing core/scripts/gui/shipDataDlg.cs.
-Executing core/scripts/gui/prgDoorCtrlDlg.cs.
-==>1();
-syntax error
-==>execServer();
-Executing core/scripts/server/functionLib.cs.
-Executing core/scripts/server/audio.cs.
-Executing core/scripts/server/message.cs.
-Executing core/scripts/server/commands.cs.
-core/scripts/server/commands.cs (379): string always evaluates to 0.
-Executing core/scripts/server/levelInfo.cs.
-Executing core/scripts/server/missionLoad.cs.
-Executing core/scripts/server/missionDownload.cs.
-Executing core/scripts/server/clientConnection.cs.
-Executing core/scripts/server/player.cs.
-Executing core/scripts/server/staticShape.cs.
-Executing core/scripts/server/item.cs.
-Executing core/scripts/server/weapon.cs.
-Executing core/scripts/server/kickban.cs.
-Executing core/scripts/server/spawn.cs.
-Executing core/scripts/server/camera.cs.
-Executing core/scripts/server/centerPrint.cs.
-Executing core/scripts/server/commands.cs.
-core/scripts/server/commands.cs (379): string always evaluates to 0.
-Executing core/scripts/server/inventory.cs.
-Executing core/scripts/server/TSNodes.cs.
-core/scripts/server/TSNodes.cs (2): Cannot re-declare object [TSStaticNodeMgr].
-Executing core/scripts/server/defaultGame.cs.
-Executing core/scripts/server/buildGame.cs.
-Executing core/scripts/server/battleGame.cs.
-Executing core/scripts/server/saveLoad.cs.
-Executing core/scripts/server/deployables.cs.
-Executing core/scripts/server/console.cs.
-Executing core/scripts/server/hyperDrive.cs.
-Executing core/scripts/server/station.cs.
-Executing core/scripts/server/lighting.cs.
-Executing core/scripts/server/elevator.cs.
-Executing core/scripts/server/door.cs.
-Executing core/scripts/server/shipGroup.cs.
-Executing core/scripts/server/shipObject.cs.
-Executing core/scripts/server/powerGroup.cs.
-Executing core/scripts/server/pieceGroup.cs.
-0
-0
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
-Window focus status changed: focus: 1
-==>execServer();
-Executing core/scripts/server/functionLib.cs.
-Executing core/scripts/server/audio.cs.
-Executing core/scripts/server/message.cs.
-Executing core/scripts/server/commands.cs.
-core/scripts/server/commands.cs (379): string always evaluates to 0.
-Executing core/scripts/server/levelInfo.cs.
-Executing core/scripts/server/missionLoad.cs.
-Executing core/scripts/server/missionDownload.cs.
-Executing core/scripts/server/clientConnection.cs.
-Executing core/scripts/server/player.cs.
-Executing core/scripts/server/staticShape.cs.
-Executing core/scripts/server/item.cs.
-Executing core/scripts/server/weapon.cs.
-Executing core/scripts/server/kickban.cs.
-Executing core/scripts/server/spawn.cs.
-Executing core/scripts/server/camera.cs.
-Executing core/scripts/server/centerPrint.cs.
-Executing core/scripts/server/commands.cs.
-core/scripts/server/commands.cs (379): string always evaluates to 0.
-Executing core/scripts/server/inventory.cs.
-Executing core/scripts/server/TSNodes.cs.
-core/scripts/server/TSNodes.cs (2): Cannot re-declare object [TSStaticNodeMgr].
-Executing core/scripts/server/defaultGame.cs.
-Executing core/scripts/server/buildGame.cs.
-Executing core/scripts/server/battleGame.cs.
-Executing core/scripts/server/saveLoad.cs.
-Executing core/scripts/server/deployables.cs.
-Executing core/scripts/server/console.cs.
-Executing core/scripts/server/hyperDrive.cs.
-Executing core/scripts/server/station.cs.
-Executing core/scripts/server/lighting.cs.
-Executing core/scripts/server/elevator.cs.
-Executing core/scripts/server/door.cs.
-Executing core/scripts/server/shipGroup.cs.
-Executing core/scripts/server/shipObject.cs.
-Executing core/scripts/server/powerGroup.cs.
-Executing core/scripts/server/pieceGroup.cs.
-==>execGui();
-Executing core/scripts/gui/guiTreeViewCtrl.cs.
-Executing core/scripts/gui/messageBoxes/messageBox.ed.cs.
-Executing core/scripts/gui/messageBoxes/messageBoxOk.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxYesNo.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxYesNoCancel.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxOKCancel.ed.gui.
-Executing core/scripts/gui/messageBoxes/messageBoxOKCancelDetailsDlg.ed.gui.
-Executing core/scripts/gui/messageBoxes/messagePopup.ed.gui.
-Executing core/scripts/gui/messageBoxes/IODropdownDlg.ed.gui.
-Executing core/scripts/gui/chatHud.cs.
-core/scripts/gui/chatHud.cs (96): Cannot re-declare object [HudMessageVector].
-Executing core/scripts/gui/playGui.cs.
-Executing core/scripts/gui/startupGui.cs.
-Executing core/scripts/gui/chooseLevelDlg.cs.
-Executing core/scripts/gui/optionsDlg.cs.
-Executing core/scripts/gui/loadingGui.cs.
-Executing core/scripts/gui/prgConsoleDlg.cs.
-Executing core/scripts/gui/insHelmConsoleDlg.cs.
-Executing core/scripts/gui/prgPowerDlg.cs.
-Executing core/scripts/gui/spawnerDlg.cs.
-Executing core/scripts/gui/insGeneratorDlg.cs.
-Executing core/scripts/gui/textSwapperDlg.cs.
-Executing core/scripts/gui/prgAssetPowerDlg.cs.
-Executing core/scripts/gui/inventoryDlg.cs.
-Executing core/scripts/gui/shipDataDlg.cs.
-Executing core/scripts/gui/prgDoorCtrlDlg.cs.
-0
-4029
-prgDoorCtrlDlg
-0
-4029
-DoorSwitch
-DoorSwitch
-DoorSwitch
-DoorSwitch
-Window focus status changed: focus: 0
-  Using background sleep time: 200
-DirectInput deactivated.
-Activating DirectInput...
 *** ENDING MISSION
-CDROP: 3973 
+CDROP: 3976 
 Exporting server prefs...
 Exporting client prefs
 Exporting server prefs

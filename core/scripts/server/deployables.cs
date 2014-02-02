@@ -47,8 +47,12 @@ $dep[17] = "Door";
 $dep[17, c] = "0";
 $dep[18] = "doorSwitch";
 $dep[18, c] = "0";
+$dep[19] = "mediumShipTurret";
+$dep[19, c] = "0";
+$dep[20] = "turretConsole";
+$dep[20, c] = "0";
 
-$dep[max] = 19;
+$dep[max] = 21;
 
 $nameToInv["Block1"] = "Block";
 $nameToInv["GeneratorStandard"] = "Standard Generator";
@@ -69,6 +73,8 @@ $nameToInv["upElevator"] = "Up Elevator";
 $nameToInv["downElevator"] = "Down Elevator";
 $nameToInv["door"] = "Door";
 $nameToInv["doorSwitch"] = "Door Control";
+$nameToInv["mediumShipTurret"] = "Medium TurretBase";
+$nameToInv["turretConsole"] = "Fire Control Console";
 
 //-----------------------------------------------------------------------------
 //  Shapebase functions
@@ -79,9 +85,11 @@ function shapeBase::testDeploy(%this, %data, %col)
   if (isObject(%this.testingDeploy))
     %this.testingDeploy.delete();
 
-  echo(%data.getname());
+  echo(%data.getClassName());
 
-  if (%data.getClassName() !$= "")
+  if (%data.getClassName() $= "TurretShapeData")
+    %this.testingDeploy = spawnTurretBase(%data);
+  else if (%data.getClassName() !$= "")
     %this.testingDeploy = spawnStaticShape(%data);
   else if (%col == 2)
     %this.testingDeploy = spawnTSStaticShape(%data, 1, 1);
@@ -129,6 +137,7 @@ function shapeBase::deployObject(%this, %obj)
     %obj.setEdge(%pos, "0 0 -1");
   else
     %pos = vectoradd(%this.getEyePoint(), vectorscale(%this.getEyeVector(), 20));
+
 
   if (%obj.getClassName() !$= "TSStatic")
   {

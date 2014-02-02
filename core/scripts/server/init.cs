@@ -97,6 +97,7 @@ function execServer()
    exec("./lighting.cs");
    exec("./elevator.cs");
    exec("./door.cs");
+   exec("./turret.cs");
 
    exec("./shipGroup.cs");
    exec("./shipObject.cs");

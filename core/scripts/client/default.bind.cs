@@ -55,18 +55,18 @@ function movebackward(%val)
 
 function moveup(%val)
 {
-   %object = ServerConnection.getControlObject();
+   //%object = ServerConnection.getControlObject();
    
-   if(%object.isInNamespaceHierarchy("Camera"))
-      $mvUpAction = %val * $movementSpeed;
+   //if(%object.isInNamespaceHierarchy("Camera"))
+   $mvUpAction = %val * $movementSpeed;
 }
 
 function movedown(%val)
 {
-   %object = ServerConnection.getControlObject();
+   //%object = ServerConnection.getControlObject();
    
-   if(%object.isInNamespaceHierarchy("Camera"))
-      $mvDownAction = %val * $movementSpeed;
+   //if(%object.isInNamespaceHierarchy("Camera"))
+   $mvDownAction = %val * $movementSpeed;
 }
 
 function turnLeft( %val )
@@ -97,28 +97,42 @@ function getMouseAdjustAmount(%val)
 
 function yaw(%val)
 {
-   %yawAdj = getMouseAdjustAmount(%val);
-   if(ServerConnection.isControlObjectRotDampedCamera())
-   {
+    %yawAdj = getMouseAdjustAmount(%val);
+
+    if(ServerConnection.isControlObjectRotDampedCamera())
+    {
       // Clamp and scale
       %yawAdj = mClamp(%yawAdj, -m2Pi()+0.01, m2Pi()-0.01);
-      %yawAdj *= 0.5;
-   }
+      %yawAdj /= 2;
+    }
 
-   $mvYaw += %yawAdj;
+    if ($Lmouse != $mvFreeLook)
+       freeLook($Lmouse);
+
+    //%mod = %yawAdj >= 0 ? 1 : -1;
+
+    //$mvYaw += (0.1 * %mod);
+    $mvYaw += %yawAdj;
 }
 
 function pitch(%val)
 {
-   %pitchAdj = getMouseAdjustAmount(%val);
-   if(ServerConnection.isControlObjectRotDampedCamera())
-   {
+    %pitchAdj = getMouseAdjustAmount(%val);
+
+    if(ServerConnection.isControlObjectRotDampedCamera())
+    {
       // Clamp and scale
       %pitchAdj = mClamp(%pitchAdj, -m2Pi()+0.01, m2Pi()-0.01);
-      %pitchAdj *= 0.5;
-   }
+      %pitchAdj /= 2;
+    }
 
-   $mvPitch += %pitchAdj;
+    if ($Lmouse != $mvFreeLook)
+       freeLook($Lmouse);
+
+    //%mod = %pitchAdj >= 0 ? 1 : -1;
+
+    //$mvPitch += (0.1 * %mod);
+    $mvPitch += %pitchAdj;
 }
 
 function jump(%val)
@@ -176,98 +190,51 @@ moveMap.bind(keyboard, "o", resizeMessageHud );
 // Mouse Trigger
 //------------------------------------------------------------------------------
 
-function mouseFire(%val)
+function mouse0(%val)
 {
-   $mvTriggerCount0++;
+   $Lmouse = %val;
+   if ($mvFreeLook != %val)
+   {
+     if ($mvFreeLook)
+       freeLook(0);
+     else if (!$mvFreeLook)
+       $mvTriggerCount0++;
+   }
 }
 
-function altTrigger(%val)
+function freeLook(%val)
+{
+   //if (%val)
+     //canvas.hideCursor();
+   //else
+     //canvas.showCursor();
+
+   $mvFreeLook = %val;
+}
+
+function mouse1(%val)
 {
    $mvTriggerCount1++;
 }
 
-moveMap.bind( mouse, button0, mouseFire );
-moveMap.bind( mouse, button1, altTrigger );
+//moveMap.bind( mouse, button0, mouse0 );
+//moveMap.bind( mouse, button1, mouse1 );
+
 
 //------------------------------------------------------------------------------
 // Zoom and FOV functions
 //------------------------------------------------------------------------------
 
-if($Player::CurrentFOV $= "")
-   $Player::CurrentFOV = $pref::Player::DefaultFOV / 2;
-
-// toggleZoomFOV() works by dividing the CurrentFOV by 2.  Each time that this
-// toggle is hit it simply divides the CurrentFOV by 2 once again.  If the
-// FOV is reduced below a certain threshold then it resets to equal half of the
-// DefaultFOV value.  This gives us 4 zoom levels to cycle through.
-
-function toggleZoomFOV()
+function zoomWheel(%val)
 {
-    $Player::CurrentFOV = $Player::CurrentFOV / 2;
-
-    if($Player::CurrentFOV < 5)
-        resetCurrentFOV();
-
-    if(ServerConnection.zoomed)
-      setFOV($Player::CurrentFOV);
-    else
-    {
-      setFov(ServerConnection.getControlCameraDefaultFov());
-    }
+  commandToServer('setZoomLvl', %val > 0 ? -1 : 1);
 }
 
-function resetCurrentFOV()
-{
-   $Player::CurrentFOV = ServerConnection.getControlCameraDefaultFov() / 2;
-}
+moveMap.bind( mouse0, zaxis, "zoomWheel" );
 
-function turnOffZoom()
-{
-   ServerConnection.zoomed = false;
-   setFov(ServerConnection.getControlCameraDefaultFov());
-
-   // Rather than just disable the DOF effect, we want to set it to the level's
-   // preset values.
-   //DOFPostEffect.disable();
-   ppOptionsUpdateDOFSettings();
-}
-
-function setZoomFOV(%val)
-{
-   if(%val)
-      toggleZoomFOV();
-}
-
-function toggleZoom(%val)
-{
-   if (%val)
-   {
-      ServerConnection.zoomed = true;
-      setFov($Player::CurrentFOV);
-
-      DOFPostEffect.setAutoFocus( true );
-      DOFPostEffect.setFocusParams( 0.5, 0.5, 50, 500, -5, 5 );
-      DOFPostEffect.enable();
-   }
-   else
-   {
-      turnOffZoom();
-   }
-}
-
-moveMap.bind(keyboard, f, setZoomFOV);
-moveMap.bind(keyboard, r, toggleZoom);
 //------------------------------------------------------------------------------
 // Camera & View functions
 //------------------------------------------------------------------------------
-
-function toggleFreeLook( %val )
-{
-   if ( %val )
-      $mvFreeLook = true;
-   else
-      $mvFreeLook = false;
-}
 
 function toggleFirstPerson(%val)
 {
@@ -283,7 +250,6 @@ function toggleCamera(%val)
       commandToServer('ToggleCamera');
 }
 
-moveMap.bind( keyboard, z, toggleFreeLook );
 moveMap.bind(keyboard, tab, toggleFirstPerson );
 moveMap.bind(keyboard, "alt c", toggleCamera);
 

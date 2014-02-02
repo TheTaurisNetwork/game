@@ -92,10 +92,12 @@ function Console::onDisabled(%data, %this)
     if (!%this.latching)
       %this.actuated = false;
   }
-  else if (%data.getName() $= "HelmConsole")
-    %this.actuated = false;
-  else if (%data.getName() $= "DoorSwitch")
-    %this.actuated = false;
+//  else if (%data.getName() $= "HelmConsole" && %data.getName() $= "DoorSwitch")
+//    %this.actuated = false;
+//  else if ()
+//    %this.actuated = false;
+//  else if (%data.getName() $= "TurretConsole")
+
 
   Asset::onDisabled(%data, %this);
 }
@@ -107,16 +109,16 @@ function Console::onInteract(%data, %this, %player)
   if (!%this.isEnabled())
     return false;
 
-  %data.actuate(%this);
+  %data.actuate(%this, %player);
 }
 
 //-----------------------------------------------------------------------------
 
-function Console::actuate(%data, %this)
+function Console::actuate(%data, %this, %player)
 {
   if (!%this.isEnabled())
     return false;
-  echo(%data.getname());
+
   if (%data.getName() $= "Console")
   {
     %pG = %this.getGroup();
@@ -149,14 +151,74 @@ function Console::actuate(%data, %this)
   }
   else if (%data.getName() $= "DoorSwitch")
   {
-    %door = %this.door;
-    if (%door)
+    %door = %this.getGroup().getDoorByName(%this.door);
+    if (isObject(%door))
       %door.getDatablock().onInteract(%door);
   }
+  else if (%data.getName() $= "TurretConsole")
+  {
+    %data.connectPlayer(%this, %player);
+  }
+
   return true;
 }
 
 //-----------------------------------------------------------------------------
+
+function TurretConsole::connectPlayer(%data, %this, %player)
+{
+  %turret = %this.getGroup().getTurretByName(%this.turret);
+
+  if (!isObject(%turret) || !%turret.isEnabled())
+    echo("Data-link cannot be established");
+  else
+  {
+    echo("Data-link established");
+
+    %turret.mountObject(%player, 0);
+    %player.mVehicle = %turret;
+    %player.fireCtrlr = %this;
+    //%this.mountObject(%player, 0);
+    //%player.mountPos = %data.offset;
+
+    %cl = %player.client;
+    %cl.setControlObject(%turret);
+
+    CommandtoClient(%cl, 'pushGui', "turretCtrlGui");
+  }
+}
+
+//-----------------------------------------------------------------------------
+
+function TurretConsole::disconnectPlayer(%data, %this, %player)
+{
+  %this.UnMountObject(0);
+  %player.mVehicle = "";
+  %player.fireCtrlr = "";
+
+  echo("Data-link timed out");
+
+  CommandtoClient(%cl, 'pushGui', "playGui");
+}
+
+//-----------------------------------------------------------------------------
+
+function TurretConsole::turretDisabled(%data, %this)
+{
+  // playthread for screen off and red blinking and stuff
+}
+
+//-----------------------------------------------------------------------------
+
+function TurretConsole::turretEnabled(%this)
+{
+  // playthread for screen on and lights and stuff
+}
+
+
+//-----------------------------------------------------------------------------
+
+
 
 
 

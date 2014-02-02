@@ -13,54 +13,31 @@ function serverCmdonClientTrigger(%client, %trig, %val)
 
 //-----------------------------------------------------------------------------
 
-function serverCmdprogramObject(%client)
+function serverCmdsetZoomLvl(%client, %dir)
 {
-  if (%client.player.interactObj && game.class $= "BuildGame")
+  if (isobject(%client.camera) && isobject(%client.player))
   {
-    %db = %client.player.interactObj.getDatablockName();
-    switch$(%db)
-    {
-         case "Console":
-           CommandtoClient(%client, 'pushGui', "prgConsoleDlg");
-
-         case "DoorSwitch":
-           CommandtoClient(%client, 'pushGui', "prgDoorCtrlDlg");
-
-         default:
-
-           if (%db !$= "Generator")
-             return;
-           CommandtoClient(%client, 'pushGui', "prgAssetPowerDlg");
-    }
+    //%oldPos = %client.camera.gettransform();
+    %client.camera.zoomLevel(%client.camera.zoomIncs * %dir);
   }
 }
 
 //-----------------------------------------------------------------------------
 
-function serverCmdinspectObject(%client)
+function serverCmdobjectSelected(%client, %class, %pos)
 {
-  if (%client.player.interactObj)// && game.class $= "BuildGame")
-  {
-    switch$(%client.player.interactObj.getDatablockName())
-    {
-         case "Console":
-           CommandtoClient(%client, 'pushGui', "insConsoleDlg");
+   InitContainerRadiusSearch(%pos, 1, $DefaultObjectMask);
+   %obj = ContainerSearchNext();
 
-         case "HelmConsole":
-           CommandtoClient(%client, 'pushGui', "insHelmConsoleDlg");
+   (%class).onSelect(%obj);
+}
 
-         default:
-           %tryClass = true;
-    }
-    if (%tryClass)
-    {
-      switch$(%client.player.interactObj.className())
-      {
-           case "Generator":
-           CommandtoClient(%client, 'pushGui', "insGeneratorDlg");
-      }
-    }
-  }
+function serverCmdobjectDeselected(%client, %class, %pos)
+{
+   InitContainerRadiusSearch(%pos, 1, $DefaultObjectMask);
+   %obj = ContainerSearchNext();
+
+   (%class).onDeselect(%obj);
 }
 
 //-----------------------------------------------------------------------------
@@ -76,7 +53,6 @@ function serverCmdinteractObject(%client)
 
 function serverCmdrequestDataforGui(%client, %id, %dlg, %func, %var1)
 {
-  error(%dlg);
   switch$(%dlg)
   {
       case "prgConsoleDlg":
@@ -131,12 +107,39 @@ function serverCmdrequestDataforGui(%client, %id, %dlg, %func, %var1)
               {
                  %test = %pGroup.getObject(%i);
                  if (%test.getDatablockName() $= "Door")
-                   %arg2 = trim(%arg2 SPC %test);
+                   %arg2 = trim(%arg2 SPC %test.doorName);
               }
 
               %arg3 = %obj.pwrBranch;
               %arg1 = %pGroup.branch[max];
               %arg4 = %obj.door ? %obj.door : false;
+            }
+          }
+
+      case "prgFireCtrlDlg":
+          %obj = %client.player.interactObj;
+          if (%obj)
+          {
+
+            %client.programmingObject = %obj;
+            %ship = %client.getBuildingGroup();
+            if (%ship)
+            {
+              %pGroup = %ship.getAssetGroup();
+              for (%i = 0; %i < %pGroup.getCount(); %i++)
+              {
+                 %test = %pGroup.getObject(%i);
+                 //if (%test.getDatablockName() $= "smallTurretBase")
+                 //  %arg2 = trim(%arg2 SPC %test.turretName);
+                 if (%test.getDatablockName() $= "mediumShipTurret")
+                   %arg2 = trim(%arg2 SPC %test.turretName);
+                 //if (%test.getDatablockName() $= "largeTurretBase")
+                 //  %arg2 = trim(%arg2 SPC %test.turretName);
+              }
+
+              %arg3 = %obj.pwrBranch;
+              %arg1 = %pGroup.branch[max];
+              %arg4 = %obj.turret ? %obj.turret : false;
             }
           }
 
@@ -167,8 +170,7 @@ function serverCmdrequestDataforGui(%client, %id, %dlg, %func, %var1)
             for (%i = 0; %i < %pGroup.branch[max]; %i++)
                %arg5 = Trim(%arg5 SPC %pGroup.getBranchState(%i));
         }
-
-      
+        
       case "insGeneratorDlg":
           %obj = %client.player.interactObj;
           if (%obj.className() $= "Generator")
@@ -404,10 +406,17 @@ function serverCmdreceiveUploadDataStream(%client, %id, %dlg, %arg1, %arg2, %arg
           %obj = %player.interactObj;
           if (isObject(%obj))
             %obj.setPwrBranch(%arg1);
-          if (isObject(%arg2))
-            %obj.door = %arg2;
-          echo(%arg1);
-          echo(%arg2);
+
+          %obj.door = %arg2;
+
+      case "prgFireCtrlDlg":
+
+          %obj = %player.interactObj;
+          if (isObject(%obj))
+            %obj.setPwrBranch(%arg1);
+
+          if (!%obj.getGroup().getCtrlrByTurret(%arg2))
+            %obj.turret = %arg2;
   }
 }
 

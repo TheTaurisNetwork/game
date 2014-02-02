@@ -46,8 +46,6 @@ function GameConnection::onControlObjectChange(%this)
    
    // Reset the current FOV to match the new object
    // and turn off any current zoom.
-   resetCurrentFOV();
-   turnOffZoom();
 }
 
 // Called on the new connection object after connect() succeeds.
@@ -106,4 +104,17 @@ function disconnectedCleanup()
    
    // We can now delete the client physics simulation.
    physicsDestroyWorld( "client" );                 
+}
+
+//-----------------------------------------------------------------------------
+
+
+function ShapeBaseData::onSelected(%this,%obj)
+{
+  commandToServer( 'objectSelected', %this.getName(), %obj.getPosition());
+}
+
+function ShapeBaseData::onDeselected(%this,%obj)
+{
+  commandToServer( 'objectDeselected', %this.getName(), %obj.getPosition());
 }

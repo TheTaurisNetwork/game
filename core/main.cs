@@ -37,7 +37,6 @@ function onStart()
    GlobalActionMap.bindcmd(keyboard, "alt k", "cls();",  "");
 
    exec("~/art/gui/profiles.cs");
-   exec("./scripts/gui/cursors.cs");
 
    // Seed the random number generator.
    setRandomSeed();

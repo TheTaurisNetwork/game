@@ -24,46 +24,71 @@
    canSaveDynamicFields = "1";
       enabled = "1";
       helpTag = "0";
-      noCursor = "1";
+      noCursor = "0";
 
-   new GuiBitmapCtrl(centerPrintDlg) {
-      bitmap = "core/art/gui/images/hudfill.png";
-      wrap = "0";
-      position = "237 374";
-      extent = "550 20";
-      minExtent = "8 8";
-      horizSizing = "center";
-      vertSizing = "center";
-      profile = "CenterPrintProfile";
-      visible = "0";
+  //  new GuiHybridInput(inputFrame) {
+  //    margin = "0 0 0 0";
+  //    padding = "0 0 0 0";
+  //    anchorTop = "1";
+  //    anchorBottom = "0";
+  //    anchorLeft = "1";
+   //   anchorRight = "0";
+   //   position = "0 0";
+    //  extent = "800 800";
+   //   minExtent = "8 2";
+   //   horizSizing = "right";
+   //   vertSizing = "bottom";
+   //   profile = "GuiDefaultProfile";
+   //   visible = "1";
+   //   active = "1";
+   //   tooltipProfile = "GuiToolTipProfile";
+  //    hovertime = "1000";
+  //    isContainer = "1";
+   //   canSave = "1";
+   //   canSaveDynamicFields = "0";
+   //};
+   new GuiPanel() {
+      docking = "None";
+      margin = "0 0 0 0";
+      padding = "0 0 0 0";
+      anchorTop = "1";
+      anchorBottom = "0";
+      anchorLeft = "1";
+      anchorRight = "0";
+      position = "866 35";
+      extent = "170 674";
+      minExtent = "16 16";
+      horizSizing = "right";
+      vertSizing = "bottom";
+      profile = "GuiDefaultProfile";
+      visible = "1";
       active = "1";
       tooltipProfile = "GuiToolTipProfile";
       hovertime = "1000";
-      isContainer = "0";
-      hidden = "1";
+      isContainer = "1";
       canSave = "1";
       canSaveDynamicFields = "0";
 
-      new GuiMLTextCtrl(CenterPrintText) {
-         lineSpacing = "2";
-         allowColorChars = "0";
-         maxChars = "-1";
-         useURLMouseCursor = "0";
-         position = "0 0";
-         extent = "546 12";
-         minExtent = "8 8";
-         horizSizing = "center";
-         vertSizing = "center";
-         profile = "CenterPrintTextProfile";
+      new GuiButtonCtrl() {
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         position = "18 207";
+         extent = "140 30";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "GuiButtonProfile";
          visible = "1";
          active = "1";
+         command = "playGui.testBut();";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
          canSaveDynamicFields = "0";
       };
-   };
+
    new GuiBitmapCtrl(bottomPrintDlg) {
       bitmap = "core/art/gui/images/hudfill.png";
       wrap = "0";
@@ -74,7 +99,7 @@
       vertSizing = "top";
       profile = "CenterPrintProfile";
       visible = "0";
-      active = "1";
+      active = "0";
       tooltipProfile = "GuiToolTipProfile";
       hovertime = "1000";
       isContainer = "0";
@@ -94,7 +119,7 @@
          vertSizing = "center";
          profile = "CenterPrintTextProfile";
          visible = "1";
-         active = "1";
+         active = "0";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
@@ -102,41 +127,44 @@
          canSaveDynamicFields = "0";
       };
    };
-   new GuiBitmapCtrl() {
-      bitmap = "core/art/gui/images/reticle_default.png.png";
+   new GuiBitmapCtrl(centerPrintDlg) {
+      bitmap = "core/art/gui/images/hudfill.png";
       wrap = "0";
-      position = "480 352";
-      extent = "64 64";
-      minExtent = "8 2";
+      position = "237 374";
+      extent = "550 20";
+      minExtent = "8 8";
       horizSizing = "center";
       vertSizing = "center";
-      profile = "GuiDefaultProfile";
-      visible = "1";
-      active = "1";
-      tooltipProfile = "GuiToolTipProfile";
-      hovertime = "1000";
-      isContainer = "0";
-      canSave = "1";
-      canSaveDynamicFields = "0";
-   };
-   new GuiBitmapCtrl() {
-      bitmap = "core/art/gui/images/interact_bitmap.png";
-      wrap = "0";
-      position = "469 341";
-      extent = "86 86";
-      minExtent = "8 2";
-      horizSizing = "center";
-      vertSizing = "center";
-      profile = "GuiDefaultProfile";
+      profile = "CenterPrintProfile";
       visible = "0";
-      active = "1";
+      active = "0";
       tooltipProfile = "GuiToolTipProfile";
       hovertime = "1000";
       isContainer = "0";
-      internalName = "interActBitmap";
       hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "0";
+
+      new GuiMLTextCtrl(CenterPrintText) {
+         lineSpacing = "2";
+         allowColorChars = "0";
+         maxChars = "-1";
+         useURLMouseCursor = "0";
+         position = "0 0";
+         extent = "546 12";
+         minExtent = "8 8";
+         horizSizing = "center";
+         vertSizing = "center";
+         profile = "CenterPrintTextProfile";
+         visible = "1";
+         active = "0";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
    };
+};
 };
 //--- OBJECT WRITE END ---

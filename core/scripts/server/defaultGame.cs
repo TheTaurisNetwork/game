@@ -122,27 +122,22 @@ function DefaultGame::spawnCamera(%game, %this, %spawnPoint)
 
 function DefaultGame::spawnPlayer(%game, %this, %spawnPoint)
 {
+
    if (isObject(%this.player))
      return error("Attempting to create a player for a client that already has one");
 
-   %spawnDataBlock = "LightMaleBuilder";
+   %spawnDataBlock = "hvehicle";
+   //FlyingVehicleData.create(%spawnDataBlock);
 
-   if (isObject(%this.ship))
-   {
-     %ss = %this.ship.getSpawnPoint();
-     %x = getRandom(%ss.radius*-1, %ss.radius);
-     %y = getRandom(%ss.radius*-1, %ss.radius);
-
-     %spawnPoint = vectorAdd(%ss.getPosition(), %x SPC %y SPC 0);
-   }
+   %player = spawnObject("FlyingVehicle", %spawnDataBlock);
+   // Treat %spawnPoint as a transform
+   %player.setPosition("0 -10 0");
 
    // Create a default player
-   %player = spawnObject("Player", %spawnDataBlock);
-
-
+   %player1 = spawnObject("StaticShape", "Block");
    // Treat %spawnPoint as a transform
-   %player.setPosition(%spawnPoint);
-
+   %player1.setPosition(%spawnPoint);
+   echo(%player);
    // If we didn't actually create a player object then bail
    if (!isObject(%player))
    {
@@ -173,6 +168,10 @@ function DefaultGame::spawnPlayer(%game, %this, %spawnPoint)
 
    %this.player = %player;
 
+   //%this.player.setRotation("90 0 0 1");
+
+   %this.camera.setMode("Control", %player);
+
    if( $startWorldEditor )
    {
       %control = %this.camera;
@@ -182,10 +181,10 @@ function DefaultGame::spawnPlayer(%game, %this, %spawnPoint)
    else
       %control = %player;
 
-   if(isDefined("%control"))
-      %this.setControlObject(%control);
+   //%this.setControlObject(%player);
 
-   %this.player.interactLoop();
+   //%this.player.interactLoop();
+
 }
 
 //-----------------------------------------------------------------------------

@@ -181,9 +181,9 @@
          };
 		 
          new GuiSliderCtrl(OptMouseSensitivity) {  
-            range = "0.02 2";  
+            range = "0.02 0.4";
             ticks = "10";  
-            value = "0.75";  
+            value = "0.206154";
             isContainer = "0";  
             Profile = "GuiSliderProfile";  
             HorizSizing = "right";  

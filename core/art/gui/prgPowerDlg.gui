@@ -13,7 +13,7 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      awake = "1";
+      awake = "0";
       enabled = "1";
 
    new GuiWindowCtrl() {
@@ -305,7 +305,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiTextCtrl() {
-         text = "/ 10000";
+         text = "/ ";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -329,7 +329,6 @@
          canSaveDynamicFields = "0";
       };
       new GuiTextCtrl() {
-         text = "10000";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";

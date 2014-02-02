@@ -31,10 +31,5 @@ if($platform $= "macos")
 } 
 else 
 {
-   new GuiCursor(DefaultCursor)
-   {
-      hotSpot = "1 1";
-      renderOffset = "0 0";
-      bitmapName = "~/art/gui/images/defaultCursor";
-   };
+
 }

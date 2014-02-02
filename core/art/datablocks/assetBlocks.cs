@@ -19,7 +19,7 @@ datablock staticShapeData(Console)
    typeMask = $TypeMasks::StaticShapeObjectType;
 
    needsPower = true;
-   pwrRequired = 30;
+   pwrRequired = 10;
 
    maxDamage = 1.00;
    destroyedLevel = 1.00;
@@ -33,11 +33,21 @@ datablock staticShapeData(Console)
 
 datablock staticShapeData(HelmConsole : Console)
 {
+   pwrRequired = 20;
 };
 
 //-----------------------------------------------------------------------------
 
 datablock staticShapeData(DoorSwitch : Console)
+{
+   shapeFile = "core/art/shapes/cube.dae";
+
+   pwrRequired = 10;
+};
+
+//-----------------------------------------------------------------------------
+
+datablock staticShapeData(TurretConsole : Console)
 {
    shapeFile = "core/art/shapes/cube.dae";
 
@@ -173,4 +183,7 @@ datablock staticShapeData(door)
 
 //-----------------------------------------------------------------------------
 
+
+
+//-----------------------------------------------------------------------------
 

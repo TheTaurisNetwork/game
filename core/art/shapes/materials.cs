@@ -718,3 +718,51 @@ singleton Material(door0_003)
    doubleSided = "1";
    translucentBlendOp = "None";
 };
+
+singleton Material(turretBaseMat)
+{
+   mapTo = "turretBaseMat";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(Turret_Legs_Turret_Base)
+{
+   mapTo = "Turret_Base";
+   diffuseMap[0] = "Turret_D";
+   specular[0] = "0.9 0.9 0.9 1";
+   specularPower[0] = "10";
+   translucentBlendOp = "None";
+};
+
+singleton Material(Turret_Legs_CollisionMat)
+{
+   mapTo = "CollisionMat";
+   diffuseColor[0] = "1 0 0 0.75";
+   specular[0] = "0.9 0.9 0.9 1";
+   specularPower[0] = "10";
+   translucent = "1";
+};
+
+singleton Material(plamsaturret_mpt_mat)
+{
+   mapTo = "mpt_mat";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};
+
+singleton Material(plasmaTurret_mpt_mat)
+{
+   mapTo = "mpt_mat";
+   diffuseColor[0] = "0.64 0.64 0.64 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "50";
+   doubleSided = "1";
+   translucentBlendOp = "None";
+};

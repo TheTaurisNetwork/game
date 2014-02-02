@@ -27,9 +27,37 @@ if( $Gui::fontCacheDirectory $= "")
 }
 
 //---------------------------------------------------------------------------------------------
+
+new GuiCursor(DefaultCursor)
+{
+      hotSpot = "1 1";
+      renderOffset = "0 0";
+      bitmapName = "~/art/gui/images/defaultCursor";
+};
+
+new GuiCursor( HandCursor) {
+   hotSpot = "1 1";
+   renderOffset = "0 0";
+   bitmapName = "~/art/gui/images/crosshair_blue";
+};
+
+new GuiCursor( UseCursor) {
+   hotSpot = "1 1";
+   renderOffset = "0 0";
+   bitmapName = "~/art/gui/images/macCursor";
+};
+
+new GuiCursor( MoveCursor) {
+   hotSpot = "1 1";
+   renderOffset = "0 0";
+   bitmapName = "~/art/gui/images/defaultCursor";
+};
+
+//---------------------------------------------------------------------------------------------
 // GuiDefaultProfile is a special profile that all other profiles inherit defaults from. It
 // must exist.
 //---------------------------------------------------------------------------------------------
+
 if( !isObject( GuiDefaultProfile ) )
 new GuiControlProfile (GuiDefaultProfile)
 {

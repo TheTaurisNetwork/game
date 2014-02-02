@@ -62,8 +62,23 @@ function assetGroup::incPower(%this, %pwr)
 {
   %r = %this.setPower(%this.getPower() + %pwr);
 
-//  %this.removeLoad(%pwr);
+  %this.bootDevices();
   return %r;
+}
+
+//-----------------------------------------------------------------------------
+
+function assetGroup::bootDevices(%this)
+{
+  for (%i = 0; %i < %this.getCount(); %i++)
+  {
+    %obj = %this.getObject(%i);
+    if (%obj.needsPower && !%obj.isDestroyed() && %obj.isDisabled())
+    {
+      if (%this.enoughPower(%obj.pwrRequired))
+        %obj.schedule((getRandom(0+5)+5)*100, setPwrBranch, %obj.pwrBranch);
+    }
+  }
 }
 
 //-----------------------------------------------------------------------------
@@ -109,7 +124,7 @@ function assetGroup::turnOffBiggestLoad(%this)
          %h = %obj;
     }
   }
-  %h.setPwrState(0);
+  %h.setPowerState(0);
 }
 
 //-----------------------------------------------------------------------------
@@ -354,6 +369,20 @@ function StaticShape::setPowering(%this, %bool)
 }
 
 //-----------------------------------------------------------------------------
+
+function TurretShape::setPowering(%this, %bool)
+{
+ if (!%this.isDestroyed())// && %this.className() $= "Generator")
+ {
+    if (%bool)
+      return %this.setDamageState("Enabled");
+    else
+      return %this.setDamageState("Disabled");
+ }
+ return false;
+}
+
+//-----------------------------------------------------------------------------
 //  Asset Functions
 //-----------------------------------------------------------------------------
 
@@ -371,30 +400,64 @@ function StaticShape::setPwrBranch(%this, %branch)
 
 function StaticShape::setPowerState(%this, %bool)
 {
-//  if (%this.className() $= "Drive")
-//  {
-//    if (!%bool)
-//    {
-
-//    }
-//  }
-
   %pGroup = %this.getGroup();
 
   if (!%this.needsPower || %this.isDestroyed())
     return false;
-
   if (%bool && %this.isEnabled())
     return false;
-
   if (%bool)
     if (!%pGroup.enoughPower(%this.pwrRequired))
       %bool = false;
-
   if (!%bool && %this.isDisabled())
     return false;
 
   return %this.setPowering(%bool);
+}
+
+//-----------------------------------------------------------------------------
+
+function TurretShape::setPwrBranch(%this, %branch)
+{
+  %pGroup = %this.getGroup();
+  if (!%this.needsPower || %pGroup.branch[%branch] $= "")
+    return false;
+  %this.pwrBranch = %branch;
+
+  return %this.setPowerState( %pGroup.getBranchState(%branch) );
+}
+
+//-----------------------------------------------------------------------------
+
+function TurretShape::setPowerState(%this, %bool)
+{
+  %pGroup = %this.getGroup();
+
+  if (!%this.needsPower || %this.isDestroyed())
+    return false;
+  if (%bool && %this.isEnabled())
+    return false;
+  if (%bool)
+    if (!%pGroup.enoughPower(%this.pwrRequired))
+      %bool = false;
+  if (!%bool && %this.isDisabled())
+    return false;
+
+  return %this.setPowering(%bool);
+}
+
+//-----------------------------------------------------------------------------
+
+function shipTurret::onEnabled(%data, %this)
+{
+  Asset::onEnabled(%data, %this);
+}
+
+//-----------------------------------------------------------------------------
+
+function shipTurret::onDisabled(%data, %this)
+{
+  Asset::onDisabled(%data, %this);
 }
 
 //-----------------------------------------------------------------------------

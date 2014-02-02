@@ -10,14 +10,21 @@
 //     StaticShapeData Class
 //-----------------------------------------------------------------------------
 // pre-add to the asset group
-function StaticShapeData::onDeploy(%data, %this, %player)
+function ShapeBase::onSelect(%data)
 {
-
+ warn(%data);
 }
 
 //-----------------------------------------------------------------------------
-// post-add to the asset group
-function StaticShapeData::setUp(%data, %this, %player)
+// post-add to the asset grou
+function ShapeBase::onDeselect(%data)
+{
+ warn("onDeSelect" SPC %data);
+}
+
+//-----------------------------------------------------------------------------
+// Assets added to the game in general
+function ShapeBase::onUse(%data, %this)
 {
 
 }
@@ -85,7 +92,7 @@ function StaticShape::pwrRequired(%this)
 
 function spawnStaticShape(%data)
 {
-  %r = new StaticShape()
+  %r = new staticShape()
   {
       dataBlock = %data;
   };
@@ -114,5 +121,15 @@ function spawnTSStaticShape(%data, %bool, %isHull)
 
 //-----------------------------------------------------------------------------
 
+function spawnTurretBase(%data)
+{
+  %r = new TurretShape()
+  {
+      dataBlock = %data;
+  };
+  return %r;
+}
+
+//-----------------------------------------------------------------------------
 
 

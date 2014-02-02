@@ -17,11 +17,42 @@ function Door::setUp(%data, %this, %player)
 {
   %this.actuated = false;
 
+  %this.doorName = "Door0";
+  %data.getValidDoorName(%this);
+//  error(%this.doorname);
   %this.colMesh = spawnTSStaticShape("doorCol.dae", 1);
   %this.colMesh.setTransform(%this.getTransform());
   %this.getGroup().getGroup().getPieceGroup().add(%this.colMesh);
 
   return %this.setPwrBranch( %this.pwrBranch );
+}
+
+//-----------------------------------------------------------------------------
+
+function Door::getValidDoorName(%data, %this)
+{
+  %aGroup = %this.getGroup();
+  for (%i = 0; %i < %aGroup.getCount(); %i++)
+  {
+    if (%this.doorName == %aGroup.getObject(%i).doorName)
+      %this.doorName = "Door"@%n++;
+
+    else
+      return %this.doorName;
+  }
+}
+
+//-----------------------------------------------------------------------------
+
+function AssetGroup::getDoorByName(%group, %name)
+{
+  for (%i = 0; %i < %group.getCount(); %i++)
+  {
+    %obj = %group.getObject(%i);
+    if (strCmp(%name, %obj.doorName) == 0)
+      return %obj;
+  }
+ return false;
 }
 
 //-----------------------------------------------------------------------------

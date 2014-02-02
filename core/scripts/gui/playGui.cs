@@ -48,6 +48,9 @@ function PlayGui::onWake(%this)
       schedule(0, 0, "refreshCenterTextCtrl");
    if ( isFunction( "refreshBottomTextCtrl" ) )
       schedule(0, 0, "refreshBottomTextCtrl");
+
+   //Canvas.setHybridInput(1);
+   commandToServer('setZoomLvl', $Player::CurrentFOV);
 }
 
 function PlayGui::onSleep(%this)
@@ -57,6 +60,7 @@ function PlayGui::onSleep(%this)
    
    // pop the keymaps
    moveMap.pop();
+   //Canvas.setHybridInput(0);
 }
 
 function PlayGui::clearHud( %this )
@@ -65,6 +69,13 @@ function PlayGui::clearHud( %this )
 
    while ( %this.getCount() > 0 )
       %this.getObject( 0 ).delete();
+}
+
+//-----------------------------------------------------------------------------
+
+function playGui::testBut()
+{
+   onChatMessage("HIYA");
 }
 
 //-----------------------------------------------------------------------------

@@ -37,7 +37,7 @@ function Observer::onTrigger(%this,%obj,%trigger,%state)
       case "Observer":
          // Do something interesting.
 
-      case "Corpse":
+      case "Destroyed":
          // Viewing dead corpse, so we probably want to respawn.
          %client.spawnPlayer();
 
@@ -55,12 +55,17 @@ function Observer::setMode(%this,%obj,%mode,%arg1,%arg2,%arg3)
          // Let the player fly around
          %obj.setFlyMode();
 
-      case "Corpse":
+      case "Control":
          // Lock the camera down in orbit around the corpse,
          // which should be arg1
          %transform = %arg1.getTransform();
-         %obj.setOrbitMode(%arg1, %transform, 0.5, 4.5, 4.5);
+         //%obj.setOrbitMode(%arg1, %transform, 0, 200, 0, 20);
+         %scale = strLen(%obj.GetShapeSize());
 
+         %obj.zoomIncs = %scale;
+
+         %obj.setOrbitMode(%arg1, %transform, %scale, %scale * 50, %scale * 10);
+         //%obj.setOrbitObject(%arg1, mDegToRad(50) @ " 0 0", 0, 10, 5);
    }
    %obj.mode = %mode;
 }

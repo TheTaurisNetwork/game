@@ -111,7 +111,7 @@ function createServer(%serverType, %level)
    // Let the game initialize some things now that the
    // the server has been created
    $Server::GameType = "Tauris";
-   $Server::MissionType = "Build";
+   $Server::MissionType = "default";
 
    $Game::StartTime = 0;
 

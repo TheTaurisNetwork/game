@@ -36,7 +36,7 @@
       bitmap = "./images/Torque-3D-logo.png";
       wrap = "0";
    };
-   new GuiControl() {
+   new GuiControl(testect) {
       canSaveDynamicFields = "0";
       Enabled = "1";
       isContainer = "1";
